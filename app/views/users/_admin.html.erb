@@ -1,0 +1,52 @@
+<% counter = 0 %>
+<div id="user_admin_errors" style="padding:5px;"></div>
+<div id="user_admin_ext">
+
+    <table id="users_table" style="display:inline; max-height:200px; overflow:auto;">
+      <tr>
+        <th>
+          <%= t("user.login") %>
+        </th>
+        <th>
+          <%= t("user.name") %>
+        </th>
+        <th>
+          <%= t("user.email") %>
+        </th>
+        <th>
+          <%= t("user.activated") %>
+        </th>
+        <th>
+          <%= t("user.roles") %>
+        </th>
+        <th>
+          <%= t("actions") %>
+        </th>
+      </tr>
+    <% for user in User.find(:all) %>
+      <%= render :partial => "users/user", :locals => {:user => user, :counter => counter} %>
+          <% counter +=1 %>
+    <% end %>
+      <div id="new_user_dialog_here">
+      <%= link_to_remote_with_button({:button_color => "green", :image => "plus"}, t("user.add"), :url => {:controller => "users", :action => "add_user"},
+                         :complete => "$('#add_user').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+      <%= link_to_remote_with_button({:button_color => "green", :image => "plus"}, t("user.add_role"), :url => {:controller => "users", :action => "add_role"},
+                         :complete => "$('#add_role').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+      </div>
+    </table>
+    <table id="roles_table" style="display:inline;">
+      <tr>
+        <th>
+          <%= t("user.role") %>
+        </th>
+        <th>
+          <%= t("actions") %>
+        </th>
+      </tr>
+      <% counter = 0 %>
+      <% for role in Role.find(:all) %>
+        <%= render :partial => "users/role", :locals => {:role => role, :counter => counter} %>
+        <% counter += 1 %>
+      <% end %>
+    </table>
+</div>

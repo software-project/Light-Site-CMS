@@ -1,0 +1,15 @@
+<div style="display: none;" id="new_layout_template" title="New layout_template">
+    <% remote_form_for(layout_template, :html => { :name => "new_layout_template_form"}) do |f| %>
+      <p>
+        <%= f.label :name %><br />
+        <%= f.text_field :name %>
+      </p>
+      <p>
+        <%= f.label :header_image %><br />
+        <%= f.text_field :header_image %>
+      </p>
+      <p>
+        <%= f.submit t("create"), :onclick => "$('#new_layout_template').dialog('close'); $('#new_layout_template').remove();  " %>
+      </p>
+    <% end %>
+</div>

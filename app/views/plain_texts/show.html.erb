@@ -1,0 +1,37 @@
+<div class="post <%= "blog-post" if @plain_text.post %>">
+  <% if @plain_text.post %>
+  <div class="blog-date">
+    <h1><%= @plain_text.created_at.strftime('%d') -%></h1>
+    <h4><%= t("date.month_names_roman")[@plain_text.created_at.month] + "<br/>" + @plain_text.created_at.year.to_s  %></h4>   
+  </div>
+<% end %>
+  <h2><%=h @plain_text.header %></h2>
+  <br/>
+<div
+  <% unless @plain_text.background_attachment.nil? %>
+    style="background: url('<%= @plain_text.background_attachment.public_filename(:large) %>') no-repeat top center; min-height: <%= @plain_text.background_attachment.height %>px;"
+  <% end %>>
+  <% unless @plain_text.thumb_attachment.nil? %>
+      <%= image_tag(@plain_text.thumb_attachment.public_filename(:medium)) %>
+    <% end %>
+  <div
+  <% unless @plain_text.background_attachment.nil? %>
+    class="opacity" style="min-height: <%= @plain_text.background_attachment.height %>px"
+  <% end %>>
+  <p>
+    <%= @plain_text.content %>
+  </p>
+  </div>
+</div>
+    <% if @plain_text.post %>
+      <div class="post-footing">
+          <% html = "" %>
+          <% @plain_text.tag_list.each{|tag| html << link_to(tag,:controller => "pages", :action => "tag", :tag => permalink(tag)) + " "} %>
+          Tagi: <%= html %>
+        </p>
+      </div>
+    <% end %>
+  <% if @plain_text.commentable %>
+  <%= render :partial => "comments/comments", :locals => {:item => @plain_text} %>
+  <% end %>
+</div>

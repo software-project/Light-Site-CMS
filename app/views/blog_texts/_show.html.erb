@@ -1,0 +1,35 @@
+<div  class="post-<%= post_class_name(counter, is_last) -%>" id="<%= item.order %>"
+      <%= "style=\"min-height: #{post_min_height(item)}px;\"" -%> >
+  <h2><%=link_to h(item.resource.header), { :controller => 'blog_texts', :action => 'show',
+  :year => item.created_at.year,:month => item.created_at.month,:day => item.created_at.day, :id => item.resource.id}, {:class => 'header-href'}  %></h2>
+
+  <div class="post_tags">
+    Tagi: <%  item.resource.tag_list.each{ |i| -%>
+      <%= link_to i.to_s + " ", {:controller => "blogs", :action => "show_tag", :tag => i.to_s, :language => params[:language]} %>
+      <% } %>
+  </div>
+  
+    <%= preview_text(item.resource) %>
+
+
+  <div style="margin-top: <%= (item.resource.showed_signs_on_preview != 0 ? 30:0)+30 %>px">
+  <% if item.resource.showed_signs_on_preview != 0 %>
+  <p class="more">
+    <%= link_to 'Więcej >>', { :controller => 'blog_texts', :action => 'show', :id => item.resource.id} %>
+  </p>
+  <% end %>
+  <div class="post_info">
+    <span style="float:left;"><%= link_to "Komentarze (" + item.resource.comments.length.to_s + ")",
+  { :controller => 'blog_texts', :action => 'show',
+  :year => item.created_at.year,
+  :month => item.created_at.month,
+  :day => item.created_at.day,
+  :id => item.resource.id} %>
+    </span>Dodano
+<%= item.resource.created_at.strftime('%d.%m.%Y') -%> przez: <%=  item.user.login %>
+  </div>
+
+  </div>
+</div>
+
+

@@ -1,0 +1,19 @@
+<h1><%= t('editing subevent') %></h1>
+
+<% form_for(@subevent) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label t('event_date') %><br />
+    <%= f.datetime_select :event_date %>
+  </p>
+  <p>
+    <%= f.label t('content') %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.submit t('update') %>
+  </p>
+<% end %>
+
+<%= link_to t('show'), @subevent %> |
+<%= link_to t('back'), subevents_path %>

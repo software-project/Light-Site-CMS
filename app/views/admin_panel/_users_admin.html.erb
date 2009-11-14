@@ -1,0 +1,30 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<div class ="tab-panel-l"></div>
+<div class ="tab-panel-bg" id="tab-panel-bg" style="position:relative">
+
+  <div style="overflow:auto;position: absolute; top: 15px; max-height:110px; height:110px; max-width:220px; width:220px">
+    <%= observe_field 'select', :url => {:controller => 'admin_panel', :action => 'users'},
+        :frequency => 0.25,
+        :with => "user" %>
+    <% @users = User.find(:all, :order => 'login').map {|u| [u.login, u.id]} %>
+    <% @users = [["Wybierz użytkownika",""]] + @users %>
+    <%= select_tag(:user, options_for_select(@users,:disabled => 2), {:class => 'user_form', :id => 'select'} )%>
+    <br>
+    <div id="users-info" class="user_form">
+    </div>
+
+  </div>
+  
+  <div style="overflow:auto; position: absolute; top: 20px; left:230px; max-height:125px; height:125px; max-width:200px; width:200px;background:white" >
+  </div>
+
+ 
+  <div style="position: absolute; top: 140px; z-index:100;">
+<%= link_to_with_button({:button_color => "green", :image => "arrow"},"Dodaj", {:controller => "users", :action => "new"})  %>
+  </div>
+    
+</div>
+<div class ="tab-panel-r"></div>

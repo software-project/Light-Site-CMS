@@ -1,0 +1,25 @@
+<h1><%= t('editing blog_text') %></h1>
+
+<% form_for(item.resource, :html => { :name => "blog_text_#{item.resource.id}" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('header') %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label t('content') %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label t('tags')+':' %><br />
+    <%= f.text_field :tag_list %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('update')) %>
+
+  </p>
+<% end %>
+
+<%= link_to t('show'), item.resource %> |
+<%= link_to t('back'), :back %>

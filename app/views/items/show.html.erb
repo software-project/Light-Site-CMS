@@ -1,0 +1,23 @@
+<p>
+  <b>Extenstion:</b>
+  <%=h @item.extenstion_id %>
+</p>
+
+<p>
+  <b>Pages positions:</b>
+  <%=h @item.pages_positions_id %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%=h @item.language_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @item.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

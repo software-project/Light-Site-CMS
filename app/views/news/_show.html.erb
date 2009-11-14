@@ -1,0 +1,27 @@
+
+<% news = News.find(:first, :order => "created_at DESC") %>
+<% if admin? && admin_on_off %>
+  <div class="admin_panel">
+<% end %>
+
+<% unless news.nil? %>
+<div class="news_post">
+<h3>Aktualności</h3>
+<p>
+  <h4><%=h news.header %></h4>
+  <%= news.content %>
+  <br/>
+</p>
+</div>
+
+<% end %>
+<% if admin? && admin_on_off %>
+<div class="item_admin">
+  <%= link_to image_tag("/images/admin/add.png", :title => t('add')), {:controller => "news",:action => "new"} %>
+  <% unless news.nil? %>
+    <%= link_to image_tag("/images/admin/page_edit.png", :title => t('edit')), {:controller => "news",:action => "edit", :id => news.id} %>
+    <%= link_to image_tag("/images/admin/page_delete.png", :title => t('delete')), news, :confirm => t('are you sure?'), :method => :delete %>
+  <% end %>
+</div>
+</div>
+<% end %>

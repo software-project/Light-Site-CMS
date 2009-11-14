@@ -1,0 +1,68 @@
+/*
+    Document   : admin
+    Created on : 2009-03-24, 02:57:49
+    Author     : Martin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#admin{
+    width: 100%;
+    height: 20px;
+    color: #eeeeee;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+    background-color: #666666;
+    overflow: visible;
+}
+
+#admin p{
+
+    color: #FFFFFF;
+}
+
+.admin_left{
+    display: inline;
+    float: left;
+    color: white;
+    width: auto;
+    color: #FFFFFF;
+}
+
+.admin_center{
+    width:auto;
+    display: block;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    float: none;
+    color: #FFFFFF;
+}
+
+.admin_right{
+    display: inline;
+    width: auto;
+    float:right;
+    margin: 0 0 0 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.admin_panel{
+    border: #999999 1px dashed;
+    margin-bottom: 5px;
+}
+
+.item_admin{
+    background: #DDDDDD;
+    text-align: right;
+}
+.item_admin form{
+    display: inline;
+}

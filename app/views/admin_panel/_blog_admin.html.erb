@@ -1,0 +1,29 @@
+<div class ="tab-panel-l"></div>
+<div class ="tab-panel-bg">
+  <div style="overflow:auto;position: absolute; top: 10px; max-height:110px; height:110px">
+  <% User.find(:all).each { |b| %>
+    <%= b.login %>
+    <% if b.active? %>
+      <%= link_to_remote "ON", :url => {:controller => 'admin_panel', :action => 'deactivate', :user_id => b.id}  %>
+    <% else %>
+      <%= link_to_remote "OFF", :url => {:controller => 'admin_panel', :action => 'activate', :user_id => b.id}  %>
+    <% end %>
+    <% if Blog.find_by_user_id(b.id).nil? %>
+      <%= link_to "Stwórz bloga", {:controller => 'blogs', :action => 'new', :user => b.login}  %>
+    <% else %>
+      <%= link_to "Przejdź do bloga", {:controller => 'blogs', :action => 'show', :user => b.login, :language => 'PL'}  %>
+    <% end %>
+
+
+    <br>
+
+    <% } %>
+  </div>
+  <div style="position: absolute; top: 140px; z-index:100;">
+<%= link_to_with_button({:button_color => "green", :image => "arrow"},"Dodaj", {:controller => "users", :action => "new"})  %>
+    <%= link_to_with_button({:button_color => "green", :image => "arrow"},"Usuń", {:controller => "pages", :action => "admin_on_off"})  %>
+  </div>
+
+</div>
+<div class ="tab-panel-r"></div>
+

@@ -1,0 +1,16 @@
+<h1>Editing training</h1>
+
+<% form_for(@training) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @training %> |
+<%= link_to 'Back', trainings_path %>

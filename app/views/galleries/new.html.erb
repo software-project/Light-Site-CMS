@@ -1,0 +1,15 @@
+<h1><%= t('new gallery') %></h1>
+
+<% form_for(@gallery, :html => { :name => "gallery_" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('name')+':' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+    <%= link_to_with_button({:button_color => "red", :image => "back"},t("back"), :back)  %>
+  </p>
+<% end %>
+

@@ -1,0 +1,26 @@
+<h1>Listing quotas</h1>
+
+<table>
+  <tr>
+    <th>Content</th>
+    <th>Speaker</th>
+    <th>Company</th>
+    <th>Language</th>
+  </tr>
+
+<% for quota in @quotas %>
+  <tr>
+    <td><%=h quota.content %></td>
+    <td><%=h quota.speaker %></td>
+    <td><%=h quota.company %></td>
+    <td><%=h quota.language_id %></td>
+    <td><%= link_to 'Show', quota %></td>
+    <td><%= link_to 'Edit', edit_quota_path(quota) %></td>
+    <td><%= link_to 'Destroy', quota, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quota', :action => "add" %>

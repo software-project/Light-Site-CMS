@@ -1,0 +1,43 @@
+<p>
+  <b>Parent:</b>
+  <%=h @attachment.parent_id %>
+</p>
+
+<p>
+  <b>Content type:</b>
+  <%=h @attachment.content_type %>
+</p>
+
+<p>
+  <b>Filename:</b>
+  <%=h @attachment.filename %>
+</p>
+
+<p>
+  <b>Thumbnail:</b>
+  <%=h @attachment.thumbnail %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @attachment.size %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%=h @attachment.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @attachment.height %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @attachment.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
+<%= link_to 'Back', attachments_path %>

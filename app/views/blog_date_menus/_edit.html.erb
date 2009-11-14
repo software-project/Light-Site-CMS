@@ -1,0 +1,19 @@
+<h1><%= t('editing event') %></h1>
+
+<% form_for(item.resource, :html => { :name => "event_#{item.resource.id}" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('blog owner') %><br />
+    <%= select(  "blog_date_menu", "blog_id", Blog.all.collect {|p| [  User.find(p.user_id).login, p.id ] }, {:include_blank => false}) %>
+  </p>
+
+  <p>
+    <br />
+
+    <%= f.submit_with_javascript( t('update')) %>
+  </p>
+<% end %>
+
+<%= link_to t('show'), item.resource %> |
+<%= link_to t('back'), :back %>

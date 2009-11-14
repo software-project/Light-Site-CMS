@@ -1,0 +1,10 @@
+<div>
+  Utworzony:
+  <div style="margin-left:10px"><%= user.created_at %></div>
+  <% if user.active? %>
+  Aktywny
+  <% else %>
+  Nieaktywny
+  <% end %>
+</div>
+

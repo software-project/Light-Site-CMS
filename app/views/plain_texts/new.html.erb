@@ -1,0 +1,41 @@
+<h1><%= t('new text') %></h1>
+
+<% form_for(@plain_text, :html => { :name => "plain_text_" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('header')+':' %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label t('content')+':' %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label t('as_post')+':' %>
+    <%= f.check_box(:post) %>
+  </p>
+  <p>
+    <%= f.label :taggins %><br/>
+    <%= f.text_field :tag_list %>
+  </p>
+  <p>
+    <%= f.label t('thumb_image')+':' %>
+    <%= f.collection_select( :thumb_attachment_id, Attachment.find(:all, :conditions => "name is not null and content_type like \"%image%\""), :id, :name,{:include_blank => true}) -%> <%= link_to t('add_image'), :controller => "attachments", :action => "add", :plain_text_id => @plain_text.id %>
+  </p>
+  <p>
+    <%= f.label t('background_image')+':' %>
+    <%= f.collection_select( :background_attachment_id, Attachment.find(:all, :conditions => "name is not null and content_type like \"%image%\""), :id, :name,{:include_blank => true}) -%>
+  </p>
+  <p>
+    <%= f.label t('char_showed')+':'  %>
+    <%= f.spinbox_field :showed_signs_on_preview, :html => {:value => @plain_text.showed_signs_on_preview}, :min => 0 %>
+  </p>
+  <%= ExtensionManager.render(:position => "plain_text", :action => "new", :form => f, :view => self) %>
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), plain_texts_path %>
+

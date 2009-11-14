@@ -1,0 +1,22 @@
+    <% counter = 0 %>
+<% for item in @items %>
+  <% if admin? && admin_on_off %>
+    <div class="admin_panel">
+      <% if (params[:edit].to_i == item.id) %>
+        <%= render(:partial => "#{item.item.extension_type.controller_name}/edit", :locals => {:item => item.item, :page => @page}) %>
+      <% else %>
+        <%= render(:partial => "#{item.item.extension_type.controller_name}/show", :locals => {:item => item.item, :page => @page, :counter => counter, :is_last => (counter == @items.size)}) %>
+      <% end %>
+
+      <%= render(:partial => "shared/item_admin_panel", :locals => {:item => item.item, :page => @page}) %>
+    </div>
+    <% counter += 1 %>
+  <% else %>
+    <% if item.item.status.name == "Visible" %>
+      <%= render(:partial => "#{item.item.extension_type.controller_name}/show", :locals => {:item => item.item, :page => @page, :counter => counter, :is_last => (counter == @items.size) }) %>
+      <% counter += 1 %>
+    <% end %>
+  <% end %>
+<% end %>
+
+

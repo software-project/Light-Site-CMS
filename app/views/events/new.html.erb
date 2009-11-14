@@ -1,0 +1,31 @@
+<h1><%= t('new event') %></h1>
+
+<% form_for(@event, :html => { :name => "event_" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('header') %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label t('content') %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label t('start_date') %><br />
+    <%= f.date_select(:start_date, :order =>  [:day, :month, :year]) %>
+  </p>
+  <p>
+    <%= f.label t('end_date') %><br />
+    <%= f.date_select(:end_date, :order =>  [:day, :month, :year]) %>
+  </p>
+  <p>
+    <%= f.label t('char_showed') %>
+    <%= f.spinbox_field :char_showed, :html => {:value => 0}, :min => 0 %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), events_path %>

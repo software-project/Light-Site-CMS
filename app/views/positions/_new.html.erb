@@ -1,0 +1,15 @@
+<div id="new_position" title="<%= t("new_position") %>" style="display:none">
+
+<% remote_form_for(:position, :url =>{:controller => "positions", :action => "create"}, :html => { :name => "new_position_form"}) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+      <br/>
+    <%= f.hidden_field :layout_template_id %>
+  <p>
+    <%= f.submit t("create"), :onclick => "$('#new_position').dialog('close'); $('#new_position').remove();" %>
+  </p>
+<% end %>
+
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  training_module_id: 1
+  place: MyText
+  event_date: 2009-10-25 23:22:20
+
+two:
+  training_module_id: 1
+  place: MyText
+  event_date: 2009-10-25 23:22:20

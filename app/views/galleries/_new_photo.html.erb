@@ -1,0 +1,37 @@
+<% form_for(:gallery_photo, :url => "/gallery_photos/create" ,:html => { :multipart => true ,
+      :id => "gallery_form_#{@item.resource.id}", :name => "new_photo" }) do |form| -%>
+  <p>
+    <label for="gallery_photo"><%= t("add photo") %>:</label><br/>
+    <%= form.file_field :uploaded_data %>
+    <%= form.hidden_field :gallery_id, :value => @item.resource.id  %>
+
+  </p><br/>
+  <p>
+    <label for="name"><%= t("name")  %>:</label><br/>
+    <%= form.text_field :name, :id => "gallery_name_form_#{@item.resource.id}" %>
+  </p><br/>
+  <p>
+    <label for="description"><%= t("description")  %>:</label><br/>
+    <%= form.ckeditor_field :description %>
+  </p><br/>
+  <p>
+  <a href="javascript: document.new_photo.submit();">
+    <div class="bt" id="submit_bt">
+      <div class="bt-green-l"></div>
+      <div class="bt-green-c"><%= t("add") %></div>
+      <div class="bt-green-arrow"></div>
+    </div>
+  </a>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#submit_bt").mouseover(function(){
+        $(this).children("div").css("background-position", 'bottom left');
+      });
+      $("#submit_bt").mouseout( function(){
+        $(this).children("div").css("background-position", 'top left');
+      });
+    });
+  </script>
+  </p>
+  <br/>
+<% end -%>

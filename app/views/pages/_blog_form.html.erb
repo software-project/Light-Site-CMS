@@ -1,0 +1,12 @@
+<div id="blog_ext">
+  <p>
+    <%= f.label :is_blog %><br/>
+    <%= f.check_box :is_blog, :onclick => "$('#blog_options').toggle();" %>
+  </p>
+  <div id="blog_options" <%= f.object.attributes[:is_blog] == true ? "" : "style=\"display:none;\"" %>>
+    <p>
+      <%= f.label :description %><br/>
+      <%= f.ckeditor_field :description %>
+    </p>
+  </div>
+</div>

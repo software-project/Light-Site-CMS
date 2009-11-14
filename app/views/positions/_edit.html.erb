@@ -1,0 +1,16 @@
+<div id="edit_position" title="<%= t("edit_position") %>" style="display:none">
+  <div id="position_errors"></div>
+
+<% remote_form_for(:position,:url =>{:controller => "positions", :action => "edit", :id => position.id}, :html => { :name => "edit_position_form"}) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+      <br/>
+    <%= f.hidden_field :layout_template_id %>
+  <p>
+    <%= f.submit t("update"), :onclick => "$('#position_errors').html('');" %>
+  </p>
+<% end %>
+
+</div>

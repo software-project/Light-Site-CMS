@@ -1,0 +1,18 @@
+<h1><%= t('new attachment') %></h1>
+
+<% form_for(@attachment, :url => attachments_path, :html => { :multipart => true , :name => "attachment_"}) do |f| -%>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label t('name') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label t('extensiontype.attachment') %><br />
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), attachments_path %>

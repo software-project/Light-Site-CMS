@@ -1,0 +1,36 @@
+.gallery{
+    background-color: #111111;
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.gallery td{
+    vertical-align: top;
+}
+
+.gallery p{
+    max-height: 180px;
+    overflow: auto;
+    padding-left: 10px;
+    text-align: justify;
+}
+
+.gallery h3{
+    padding-left: 10px;
+}
+
+.gallery_item{
+    max-width: 135px;
+    width: 135px;
+    text-align: center;
+    background: black;
+    padding: 7px;
+}
+
+.gallery ul{
+    padding-left: 30px;
+}
+.gallery li{
+    list-style: square;
+}

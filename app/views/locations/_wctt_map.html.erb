@@ -1,0 +1,28 @@
+<div>
+  <div class="under_map">
+    <div id="map" style="width:620px;height:430px"></div>
+  </div>
+</div>
+<div id="map_content" style="display:none;">
+  Politechnika Wrocławska <br/>
+  Wrocławskie Centrum Transferu Technologii <br/>
+  ul. Smoluchowskiego 48,</br> 50-372 Wrocław
+</div>
+    <script type="text/javascript"
+            src="http://www.google.com/jsapi?key=ABQIAAAAll3uJpyfbIeyD_7sJrdnYRQjuXA6v1VcIcKWaxjPgiKvMK5KCBRRm0M7VWQ01aWF4I-Glcr1Cja9Rg"></script>
+<script type="text/javascript">
+    google.load("maps", "2");
+
+    // Call this function when the page has been loaded
+    function initialize() {
+        var map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(51.107523,17.066435), 15);
+        map.openInfoWindowHtml(map.getCenter(),"Politechnika Wrocławska<br/>Wrocławskie Centrum Transferu Technologii<br/>ul. Smoluchowskiego 48, 50-372 Wrocław");
+        var point = new GLatLng(51.107523,17.066435)
+        map.addOverlay(new GMarker(point));
+        map.addControl(new GMapTypeControl());
+        map.addControl(new GLargeMapControl3D());
+    }
+    google.setOnLoadCallback(initialize);
+
+</script>

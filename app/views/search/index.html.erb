@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <th><%= t('header') %></th>
+      <th><%= t('content') %></th>
+    </tr>
+<% for result in @results %>
+  <tr>
+    <td><%= result.header %></td>
+    <td><%= result.content %></td>
+  </tr>
+<% end %>
+</table>
+<%= will_paginate @results %>
+

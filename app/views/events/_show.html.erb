@@ -1,0 +1,39 @@
+<div class="post-<%= post_class_name(counter, is_last) -%>" id="<%= item.order %>"
+      <%= "style=\"min-height: #{post_min_height(item)}px;\"" -%> >
+  <h2><%=h item.resource.header %></h2>
+  <p>
+    <b>
+      <%= l item.resource.start_date %>
+      <% if item.resource.start_date != item.resource.end_date %>
+        - <%= l item.resource.end_date -%>
+      <% end %>
+    </b>
+  </p>
+
+ <table>
+      <tr>
+        <th><%= t('schedule') %></th>
+      </tr>
+    <% for subevent in item.resource.subevents %>
+      <tr>
+        <td><%= l(subevent.event_date, :format => :long) %></td>
+        <td><%= subevent.content %></td>
+      </tr>
+    <% end %>
+  </table>
+  <p>
+    <%= preview_event(item.resource) %>
+  </p>
+
+</div>
+<div style="margin-top: -<%= (item.resource.char_showed != 0 ? 50:0) %>px">
+  <% if item.resource.char_showed != 0 %>
+  <p class="more">
+    <%= link_to 'Więcej >>', { :controller => 'events', :action => 'show', :id => item.resource.id} %>
+  </p>
+  <% end %>
+</div>
+
+
+
+

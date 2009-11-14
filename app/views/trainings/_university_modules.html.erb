@@ -1,0 +1,48 @@
+<div style=" border-bottom: 1px solid #DDDDDD; padding:5px 10px 10px 10px;">
+<table style="width:100%;" cellspacing="5px">
+  <tr>
+    <th style="width:40%">Tytuł</th>
+    <th style="width:20%">Data</th>
+    <th style="width:40%">Miejsce</th>
+  </tr>
+<% for m in training.modules_by_university(university) %>
+      <tr>
+        <td>
+            <a href="#module_desc_<%= m.id %>" class="module_select"><b><%= m.name %></b></a>
+            <div id="module_desc_<%= m.id %>" style="display:none;">
+              <div style="background-color: #FFFFFF; width:100%; height:100%;color:#333333;">
+                <h2>
+                  <%= m.name %>
+                </h2>
+                  <%= m.content %>
+              </div>
+            </div>
+        </td>
+        <td>
+            <% for event in m.training_module_events %>
+              <p>
+                <%= event.event_date.strftime('%d-%m-%Y') %> 
+                <%#= event.event_date.strftime('%d-%m-%Y %H:%M') %>
+              </p>
+            <% end %>
+        </td>
+        <td>
+            <% for event in m.training_module_events %>
+              <p>
+                <%= event.place %>
+              </p>
+            <% end %>
+        </td>
+      </tr>
+<% end %>  
+</table>
+  <%= link_to_with_button({:button_color => "red", :image => "back"}, "Zarejestruj się", "/images/formularz.doc") %>
+<!--<h3>Zarejestruj się</h3>-->
+<script type="text/javascript">
+  $(document).ready(function(){
+     $("a.module_select").fancybox({
+       'hideOnContentClick': false
+     }); 
+  });
+</script>
+</div>

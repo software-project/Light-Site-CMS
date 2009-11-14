@@ -1,0 +1,28 @@
+<h1><%= t('events') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('header') %></th>
+    <th><%= t('content') %></th>
+    <th><%= t('start_date') %></th>
+    <th><%= t('end_date') %></th>
+    <th><%= t('char_showed') %></th>
+  </tr>
+
+<% for event in @events %>
+  <tr>
+    <td><%=h event.header %></td>
+    <td><%=h event.content %></td>
+    <td><%=h event.start_date %></td>
+    <td><%=h event.end_date %></td>
+    <td><%=h event.char_showed %></td>
+    <td><%= link_to t('show'), event %></td>
+    <td><%= link_to t('edit'), edit_event_path(event) %></td>
+    <td><%= link_to t('destroy'), event, :confirm => t('are you sure?'), :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('new event'), new_event_path %>

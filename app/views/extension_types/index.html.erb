@@ -1,0 +1,22 @@
+<h1><%= t('extension_types') %></h1>
+
+<table>
+  <tr>
+    <th><%= t('name') %></th>
+    <th><%= t('controller_name') %></th>
+  </tr>
+
+<% for extension_type in @extension_types %>
+  <tr>
+    <td><%=h extension_type.name %></td>
+    <td><%=h extension_type.controller_name %></td>
+    <td><%= link_to t('show'), extension_type %></td>
+    <td><%= link_to t('edit'), edit_extension_type_path(extension_type) %></td>
+    <td><%= link_to t('destroy'), extension_type, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to t('new extension_type'), new_extension_type_path %>

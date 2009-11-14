@@ -1,0 +1,21 @@
+<div class="comment <%= counter % 2 == 0? "even": "odd" %>"  id="comment_<%= comment.id %>">
+  <span>
+    <%= t("user_wrote",:user => "<i>#{comment.get_user}</i>") %>:
+  </span>
+    <div style="float:right;">
+        <% if (admin? && admin_on_off) || (!current_user.nil? && comment.user_id == current_user.id) %>
+            <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"}, "", :url => {:controller => "comments", :action => "delete", :id => comment.id})  %>
+        <% end %>
+    </div>
+  <div class="comment_div">
+      <h3 style="padding-bottom:3px;">
+        <%= t("subject") %>: <%= comment.subject %>
+      </h3>
+      <p style="float:right; color:#AAAAAA;">
+        <%= comment.created_at.strftime('%d-%m-%Y %H:%M') %>
+      </p>
+      <p>
+        <%= comment.content %>
+      </p>
+  </div>
+</div>

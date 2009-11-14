@@ -1,0 +1,19 @@
+<div style="display:none" title="<%= t("user.new") %>" id="edit_user">
+  <div id="user_errors"></div>
+    <% remote_form_for :user, :url => {:controller => :users, :action => "edit_user", :id => user.id}, :html => { :name => "edit_user_form"} do |f| -%>
+
+      <p><%= f.label t("name") %><br/>
+        <%= f.text_field :name %></p>
+
+        <p><%= f.label t("user.email") %><br/>
+        <%= f.text_field :email %></p>
+
+        <p><%= f.label t('password') %><br/>
+        <%= f.password_field :password %></p>
+
+        <p><%= f.label t('password_confirmation')%><br/>
+        <%= f.password_field :password_confirmation %></p>
+
+        <p><%= f.submit t('update'), :onclick => "$('#user_errors').html('');" %></p>
+    <% end -%>
+</div>

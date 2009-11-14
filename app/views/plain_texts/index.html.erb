@@ -1,0 +1,22 @@
+<h1>Listing plain_texts</h1>
+
+<table>
+  <tr>
+    <th>Header</th>
+    <th>Content</th>
+  </tr>
+
+<% for plain_text in @plain_texts %>
+  <tr>
+    <td><%=h plain_text.header %></td>
+    <td><%=h plain_text.content %></td>
+    <td><%= link_to 'Show', plain_text %></td>
+    <td><%= link_to 'Edit', edit_plain_text_path(plain_text) %></td>
+    <td><%= link_to 'Destroy', plain_text, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New plain_text', new_plain_text_path %>

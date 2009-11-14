@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  latitude: 1.5
+  logitude: 1.5
+  content: MyText
+
+two:
+  latitude: 1.5
+  logitude: 1.5
+  content: MyText

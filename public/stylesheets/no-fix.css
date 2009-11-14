@@ -1,0 +1,12 @@
+#news{
+	background: transparent url(/images/side-green.png) no-repeat bottom center;
+}
+
+#wctt-logo{
+	background: transparent url(/images/side-blue.png) no-repeat top center;
+}
+
+#menu{
+	background: transparent url(/images/side-orange.png) no-repeat bottom right;    
+    margin-left: -1px;
+}

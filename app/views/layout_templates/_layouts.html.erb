@@ -1,0 +1,25 @@
+<div id="dialog_here">
+<div id="layouts_errors" style="padding:5px;"></div>
+
+<%= link_to_remote_with_button({:button_color => "green", :image => "plus"}, t("add_layout"), :url => {:controller => "layout_templates", :action => "new"},
+                     :complete => "$('#new_layout_template').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+<table id="layout_templates">
+  <tr>
+    <th>Name</th>
+    <th>Header image</th>
+    <th>Positions</th>
+    <th>Page pagination</th>
+    <th>Main position</th>
+    <th>Actions</th>
+  </tr>
+<% counter = 0 %>
+<% for layout_template in LayoutTemplate.find(:all) %>
+  <%= render :partial => "layout_templates/row_form", :locals => {:layout_template => layout_template, :counter => counter} %>
+  <% counter += 1 %>
+<% end %>
+</table>
+
+<br />
+
+<%#= link_to 'New layout_template', new_layout_template_path %>
+</div>

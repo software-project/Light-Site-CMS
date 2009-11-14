@@ -1,0 +1,19 @@
+<h1><%= t('new extension_type') %></h1>
+
+<% form_for(@extension_type) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('name') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label t('controller_name') %><br />
+    <%= f.text_field :controller_name %>
+  </p>
+  <p>
+    <%= f.submit t('create') %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), extension_types_path %>

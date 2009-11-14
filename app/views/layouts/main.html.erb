@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Wrocławska Akademia Transferu Technologii</title>
+
+    <%= render :partial => "shared/styles_and_scripts" %>
+    <!--<%= stylesheet_link_tag 'styles' %>-->
+  </head>
+<body <%= yield :body_options %> >
+  <div id="header-content">
+    <div class="hd-inner">
+    <%= menu_form(Page.find(:first), 1, 0) %>
+    </div>
+    <div id="fancy-text">
+      <h2 class="optimer" >
+        Badania naukowe to zamienianie pieniędzy na wiedzę.<br/>Komercjalizacja - wiedzy na pieniądze.
+      </h2>
+    </div>
+  </div>
+  <div id="doc2" class="yui-t5">
+<!-- *************************************** HEADER *************************************** -->
+    <div id="hd">
+      <div id="logo">
+        <img src="/images/watt-logo.png" alt="logo">
+      </div>
+    </div>
+<!-- *************************************** HEADER END *************************************** -->
+
+    <% if admin? %>
+        <div id="admin-activator">
+          <%= render(:partial => "shared/new_admin", :locals => {:page => @page}) %>
+        </div>
+    <% end %>
+<!-- *************************************** MAIN PANEL *************************************** -->
+      <div id="bd">
+          <div id="yui-main">
+            <div class="yui-b">
+              <div id="left-top" class="yui-g" style="background: transparent url('/images/<%= @page.layout_template.header_image %>.png') top left no-repeat">
+                <% if flash[:notice] != nil %>
+                  <p class="green"><%= flash[:notice] %></p>
+                <% end %>
+                <%= yield :content %>
+                <%= yield %>
+              </div>
+                <a href="/PL/aktualnosci" style="float:left;">
+                    <img src="/images/transparent.gif" alt="" style="position: relative; float:left;top: 30px; padding:0;cursor:pointer;" />
+                </a>
+              <div id="news" class="yui-gb">
+
+                <% page = Page.find(:first, :conditions => ["slug = ?","aktualnosci"]) %>
+                <% unless page.nil? %>
+                <% news = page.blocks.find(:first, :conditions => ["position_id = ?",page.layout_template.positions.find(:first, :conditions => ["main_position = 1"])], :order => "created_at desc").items %>
+                <%= render :partial => "shared/news", :locals => {:item => news[0], :last => nil, :first => true} %>
+                <%= render :partial => "shared/news", :locals => {:item => news[1], :last => nil} %>
+                <%= render :partial => "shared/news", :locals => {:item => news[2], :last => true} %>
+                <% end %>
+              </div>
+             </div>
+          </div>
+    <!-- *************************************** RIGHT PANEL *************************************** -->
+        <div id="rightpanel" class="yui-b">
+          <div id="blog">
+            <a href="/PL/blog">
+                <img src="/images/transparent.gif" alt="" style="padding: 5px 0 0 20px;cursor:pointer;" />
+            </a>
+            <% page = Page.find(:first, :conditions => ["slug = ?","blog"]) %>
+            <% unless page.nil? %>
+            <% blogs = page.blocks.find(:first, :conditions => ["position_id = ?",page.layout_template.positions.find(:first, :conditions => ["main_position = 1"])], :order => "created_at desc") %>
+            <% if !blogs.nil? and blogs.items.size > 0 %>
+                <div class="blog-first">
+                  <h4>
+                    <%= link_to blogs.items[0].resource.header, blogs.items[0].resource %>
+                  </h4>
+                  <p>
+                    <%= link_to strip_tags(blogs.items[0].resource.content)[0..100], blogs.items[0].resource %>
+                  </p>
+                </div>
+                <% unless blogs.items[1].nil? %>
+                <div class="blog-next">
+                    <%= link_to blogs.items[1].resource.header, blogs.items[1].resource %>
+                </div>
+                <% end %>
+                <% unless blogs.items[2].nil? %>
+                <div class="blog-next">
+                    <%= link_to blogs.items[2].resource.header, blogs.items[2].resource %>
+                </div>
+                <% end %>
+                <% unless blogs.items[3].nil? %>
+                <div class="blog-last">
+                    <%= link_to blogs.items[3].resource.header, blogs.items[3].resource %>
+                </div>
+                <% end %>
+            <% end %>
+            <% end %>
+          </div>
+          <div id="register">
+            <img src="/images/register-bg.png" alt="Zarejestruj się" id="register_tip" style="cursor:pointer;">
+            <div id="register_form" style="display:none;">
+              <div>
+                  <ul>
+                    <li class="li-bg">1  Ściągnij <a href="/images/formularz.doc" style="text-decoration:underline;">formularz rejestracyjny</a>.</li>
+                    <li class="li-bg">2  Wypełnij go i odeślij nam e-mailem.</li>
+                    <li class="li-bg">3  Przynieś na najbliższe szkolenie.</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+              $(document).ready(function() {
+                  $('#register img[alt]').qtip({
+                    style: {
+                      background: 'url("/images/tooltip-bg.gif")',
+                      padding: '10px 0 10px 0',
+                      border: {
+                        width: 1,
+                        radius: 2,
+                        color: '#dddddd'
+                      },
+                      tip: 'bottomRight',
+                      width: '230px'
+                    },
+                    position: {
+                      corner: {
+                        target: 'bottomMiddle',
+                        tooltip: 'bottomRight'
+                      }
+                    },
+                    content: {
+                      text: $('#register_form').html(),
+                         title:{
+                           text: 'Zarejestruj się',
+                           button: ' X'
+                         }
+                    },
+                    show: {
+                      when: 'click',
+                      solo: true
+                    },
+                    hide:false});
+              });
+            </script>
+          <% unless @page.slug.eql? "kontakt"%>
+          <div id="contact">
+            <a href="/PL/kontakt">
+                <img src="/images/transparent.gif" alt="" style="position: relative; float:left;margin-top: -40px;cursor:pointer;" />
+            </a>
+            <p style="padding-bottom:7px; font-size:11px;">
+                Politechnika Wrocławska <br/>
+                Wrocławskie Centrum   <br/>
+                Transferu Technologii  <br/>
+            </p>
+            <p style="padding-bottom:7px; font-size:11px;">
+                ul. Smoluchowskiego 48   <br/>
+                50-372 Wrocław <%= link_to "(mapka)", {:controller => "locations", :action => "ajax_map"}, :id => "ajax_map", :class => "iframe" %> <br/>
+            </p>
+            <script type="text/javascript">
+            $(document).ready(function() {
+              $("#ajax_map").fancybox({
+                 'hideOnContentClick': false,
+                 'frameWidth': 640,
+                 'frameHeight': 450
+              });
+            });
+            </script>
+            <p style=" font-size:11px;">
+                <strong>
+                tel. 071 320 3318   <br/>
+                fax 071 320 3948  <br/>
+                      <br/>
+                <span style="color: #740009">
+                e-mail wctt@wctt.pl
+                </span>
+                </strong>
+            </p>
+          </div>
+          <% end %>
+        </div>
+    <!-- *************************************** RIGHT PANEL END *************************************** -->
+      </div>
+    <!-- *************************************** MAIN PANEL END *************************************** -->
+<!-- *************************************** FOOTER *************************************** -->
+    <div id="ft">
+        <a href="http://software-project.pl" class="sp-logo">Designed by: Software Project <img src="/images/sp.png" alt="" /></a>
+        <a href="http://www.efs.gov.pl/" class="pokl"><img src="/images/pokl-logo.png" alt="Program Operacyjny Kapitał Ludzki" /></a>
+        <a href="http://www.wctt.pl/" class="wctt"> <img src="/images/wctt-logo.png" alt="Wrocławskie Centrum Transferu Technologii" /></a>
+        <a href="http://www.efs.gov.pl/" class="efs"><img src="/images/efs-logo.png" alt="Europejski Fundusz Społeczny" /></a>
+    </div>
+</div>
+
+<!-- *************************************** FOOTER END *************************************** -->
+<!--<script type="text/javascript">-->
+<!--var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");-->
+<!--document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));-->
+<!--</script>-->
+<!--<script type="text/javascript">-->
+<!--try {-->
+<!--var pageTracker = _gat._getTracker("UA-10791439-1");-->
+<!--pageTracker._trackPageview();-->
+<!--} catch(err) {}</script>-->
+  </body>
+</html>

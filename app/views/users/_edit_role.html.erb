@@ -1,0 +1,11 @@
+<div style="display:none" title="<%= t("user.role") %>" id="edit_role">
+  <div id="role_errors"></div>
+    <% remote_form_for :role, :url => {:controller => :users, :action => "edit_role", :id => role.id}, :html => { :name => "new_role_form"} do |f| -%>
+
+        <p><%= f.label t("name") %><br/>
+        <%= f.text_field :name %></p> <br/>
+
+
+        <p><%= f.submit t('update'), :onclick => "$('#role_errors').html('');" %></p>
+    <% end -%>
+</div>

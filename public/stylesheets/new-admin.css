@@ -1,0 +1,285 @@
+/* 
+    Document   : admin
+    Created on : 2009-03-24, 02:57:49
+    Author     : Martin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#admin-panel{
+    position: relative;
+    float: none;
+    height: 15px;
+    background: transparent url(/images/admin/activator-bg.png) repeat-x bottom;
+}
+
+#admin-slider{
+    width: 100%;
+    background: #444444;
+    height:335px;
+
+/*    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;*/
+}
+
+#admin-activator{
+    position: absolute;
+    width: 100%;
+    font-weight: bold;
+    overflow: visible;
+    z-index: 100;
+    top: -310px;
+    left: 0;
+}
+
+.admin_power{
+    position: absolute;
+    right: 20%;
+    margin-top: -13px;
+}
+
+.tab-down-left{
+    float: left;
+    display: block;
+    background: transparent url(/images/admin/tab-down-left.png) no-repeat top right;
+    min-height: 47px;
+    min-width: 19px;
+    padding: 0;
+    margin-top: -2px;
+}
+
+.admin-tabs{
+    padding-left: 20px;
+    list-style: none;
+    
+}
+
+.admin-tabs li{
+    float: left;
+    padding: 0;
+    margin:0;
+}
+
+.admin-tabs a{
+    color: white;
+}
+
+/*.admin-tabs a:hover{
+    color: #cccccc;
+}*/
+
+#tab-panel{
+    position: relative;
+    clear: both;
+    top: -8px;
+}
+
+.tab-panel-l{
+    background: url(/images/admin/tab-panel-left.png) no-repeat top right;
+    height:184px;
+    width: 12px;
+    float: left;
+    padding-left: 10px;
+}
+
+.tab-panel-bg{
+    background: url(/images/admin/tab-panel-bg.png) repeat-x top;
+    height:184px;
+    min-width:300px;
+    float: left;
+    color: #dddddd;
+    padding: 8px 0;
+}
+
+.tab-panel-r{
+    background: url(/images/admin/tab-panel-right.png) no-repeat top;
+    height:184px;
+    width: 12px;
+    float: left;
+}
+
+.tab-l{
+    position:relative;
+    display: inline;
+    background: url(/images/admin/tab-left.png) no-repeat top right;
+    height:23px;
+    width: 12px;
+    float: left;
+    /*z-index:100;*/
+}
+
+.tab-bg{
+    position:relative;
+    display: inline;
+    background: url(/images/admin/tab-bg.png) repeat-x top;
+    height:23px;
+    float: left;
+    color: #dddddd;
+    padding-top: 4px;
+    /*z-index:100;*/
+}
+
+.tab-r{
+    position:relative;
+    display: inline;
+    background: url(/images/admin/tab-right.png) no-repeat top;
+    height:23px;
+    width: 12px;
+    float: left;
+    /*z-index:100;*/
+}
+
+.tab-down-middle{
+    float: left;
+    display: block;
+    background: transparent url(/images/admin/tab-down-middle.png) repeat-x top;
+    min-height: 47px;
+    padding-top: 6px;
+    margin-top: -2px;
+
+}
+
+.tab-down-right{
+    float: left;
+    display: block;
+    background: transparent url(/images/admin/tab-down-right.png) no-repeat top left;
+    min-height: 47px;
+    min-width: 19px;
+    padding: 0;
+    margin-top: -2px;
+}
+
+#admin{
+    width: 100%;
+    height: 20px;
+    color: #eeeeee;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+    overflow: visible;
+}
+
+#admin p{
+
+    color: #FFFFFF;
+}
+
+.admin_left{
+    display: inline;
+    float: left;
+    color: white;
+    width: auto;
+    color: #FFFFFF;
+}
+
+.admin_center{
+    width:auto;
+    display: block;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    float: none;
+    color: #FFFFFF;
+}
+
+.admin_right{
+    display: inline;
+    width: auto;
+    float:right;
+    margin: 0 0 0 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.admin_panel{
+    border: #999999 1px dashed;
+    margin-bottom: 5px;
+    color:#AAAAAA;
+}
+
+.item_admin{
+    background: #DDDDDD;
+    text-align: right;
+}
+.item_admin form{
+    display: inline; 
+}
+
+.user_form{
+    max-width:200px;
+    width:200px;
+    padding-left: 2px;
+    border: none;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+
+#admin-panel-tabs{
+    padding: 10px;
+}
+
+#admin-panel-tabs ul{
+    margin: 5px;
+    display: block;
+    min-height: 9px;
+}
+
+#admin-panel-tabs li{
+    float:left;
+    padding: 5px;
+}
+
+.extensions{
+    float: none;
+    display: block;
+    min-height: 265px;
+    min-width: 100%;
+    max-height: 265px;
+    max-width: 100%;
+    overflow: auto;
+    background: gray;
+}
+
+
+.clear{
+    clear:both;
+    height:1%;
+    overflow:hidden;
+}
+
+.extensions th{
+    background-color: #ccccff;
+}
+
+.ext_odd{
+    background-color: #cccccc;
+}
+
+.ext_even{
+    background-color: #eeeeee;
+}
+
+#user_admin_ext li{
+    float:none;
+    text-align:right;
+    padding:0;
+    margin: 0;
+}
+
+#user_admin_ext ul{
+    margin: 0;
+    padding:0;  
+}
+
+.error_div li{
+    float:none; 
+}
+
+
+
+
+
+

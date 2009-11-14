@@ -1,0 +1,20 @@
+<h1><%= t('new menu') %></h1>
+
+<% form_for(@menu, :html => { :name => "menu_" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('menu_type') %><br />
+    <%= f.collection_select( :menu_type_id, t_collection(MenuType.find(:all)), :id, :name) -%>
+  </p>
+  <p>
+    <%= f.label t('menu depth') %><br />
+    <%= f.spinbox_field :depth, :min => 0, :max => 120, :html => {:value => 0} %>
+  </p>
+
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), menus_path %>

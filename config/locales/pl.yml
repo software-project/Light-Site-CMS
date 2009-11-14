@@ -1,0 +1,247 @@
+pl:
+  activerecord:
+    errors:
+      template:
+        header:
+          one: "{{model}} nie został zachowany z powodu jednego błędu"
+          other: "{{model}} nie został zachowany z powodu {{count}} błędów"
+        body: "Błędy dotyczą następujących pól:"
+      messages:
+        inclusion: " nie znajduje się na liście dopuszczalnych wartości"
+        exclusion: " znajduje się na liście zabronionych wartości"
+        invalid: " jest nieprawidłowe"
+        confirmation: " nie zgadza się z potwierdzeniem"
+        accepted: " musi być zaakceptowane"
+        empty: " nie może być puste"
+        blank: " nie może być puste"
+        too_long: " jest za długie (maksymalnie {{count}} znaków)"
+        too_short: " jest za krótkie (minimalnie {{count}} znaków)"
+        wrong_length: " jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
+        taken: " zostało już zajęte"
+        not_a_number: " nie jest liczbą"
+        greater_than: " musi być większe niż {{count}}"
+        greater_than_or_equal_to: " musi być większe lub równe {{count}}"
+        equal_to: " musi być równe {{count}}"
+        less_than: " musie być mniejsze niż {{count}}"
+        less_than_or_equal_to: " musi być mniejsze lub równe {{count}}"
+        odd: " musi być nieparzyste"
+        even: " musi być parzyste"
+
+  support:
+    array:
+      sentence_connector: "i"
+      skip_last_comma: true
+  message:
+    quotas:
+      no_qouta_create_one: Nie utworzono jeszcze żadnego cytatu. Dodaj cytat najpierw.
+      created: Cytat został dodany.
+    item:
+      added: Element został dodany.
+      updated: Element został uaktualniony.
+      unmovable: Tego elementu nie można przenieść.
+    logged in successfully: Zostałeś zalogowany.
+    page:
+      created: Strona została dodana.
+    blog:
+      created: Blog został dodany.
+    menu:
+      created: Menu zostało dodane.
+
+  header: Nagłówek
+  
+  status:
+    name: Status
+    visible: Widoczny
+    hidden: Ukryty
+    development: Rozwiajany
+
+  menutype:
+    horizontal main menu: Poziome menu główne
+    vertical main menu: Pionowe menu główne
+    vertical main menu with children: Pionowe menu główne z dziecmi
+    childrens menu: Menu dzieci
+
+  extensiontype:
+    menu: Menu
+    text: Tekst
+    quotation: Cytat
+    attachment: Załącznik
+    event: Wydarzenie
+    map: Mapa
+    blog menu: Menu bloga
+    blog text: Post
+    gallery: Galeria
+    training: Szkolenia
+
+  admin:
+    connect language: Podłącz język
+    page edit: Edycja strony
+    page delete: Usuń stronę
+    new page: Nowa strona
+    add subpage: Nowa podstrona
+    page administration: Administracja strony
+    add page: Dodaj stronę
+
+  pagination:
+    previous_label: "« Poprzednia"
+    next_label: "Następna »"
+
+  add comment: Dodaj komentarz
+  editing event: Edycja wydarzenia
+  header: Nagłówek
+  content: Treść
+  tags: Tagi
+  start_date: Rozpoczęcie wydarzenia
+  end_date: Zakończenie wydarzenia
+  char_showed: Liczba znaków widoczna w podglądzie
+  as_post: Dodaj jako post
+  new text: Nowy tekst
+  update: Uaktualnij
+  show: Pokaż
+  back: Powrót
+  are you sure?: Jesteś pewny/a?
+  edit: Edytuj
+  destroy: Usuń
+  new event: Nowe wydarzenia
+  events: Wydarzenia
+  create: Dodaj
+  editing extension_type: Edycja typu dodatku
+  name: Nazwa
+  description: Opis
+  controller_name: Nazwa kontrollera
+  new extension_type: Nowy typ dodatku
+  extension_types: Typy dodatków
+  search: Szukaj
+  quotations: Cytaty
+  new menu: Nowe menu
+  menu_type: Typ menu
+  menu depth: Głębokość menu
+  page:
+    parent: Rodzic strony
+    new: Nowa strona
+    edit: Edycja strony
+  layout_template: Szablon strony
+  language: Język
+  new quota: Nowy cytat
+  speaker: Mówca
+  company: Firma
+  move up: Przenieś wyżej
+  move down: Przenieś niżej
+  editing plain_text: Edycja tekstu
+  thumb_image: Obrazek tekstu
+  background_image: Obrazek tła
+  new attachment: Nowy załącznik
+  editing attachment: Edycja załącznika
+  latitude: Szerokość geograficzna
+  logitude: Długość geograficzna
+  editing location: Edycja mapy
+  attachments: Załączniki
+  add: Dodaj
+  new news: Nowa wiadomość
+  editing news: Edycja wiadomości
+  new blog menu: Nowe menu bloga
+  blog owner: Właściciel bloga
+  new blog text: Nowy post
+  editing blog_text: Edycja posta
+
+
+  blog:
+    new: Nowy blog
+    edit: Edycja bloga
+
+
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%d %B, %Y"
+
+    day_names: [Niedziela, Poniedziałek, Wtorek, Środa, CZwartek, Piątek, Sobota]
+    abbr_day_names: [Nd, Pon, Wt, Śr, Czw, Pt, So]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
+    abbr_month_names: [~, Sty, Lut, Mar, Kwi, Maj, Cze, Lip, Sie, Wrz, Paź, Lis, Gru]
+    month_names_pluralize: [~, Stycznia, Lutego, Marca, Kwietnia, Maja, Czerwca, Lipca, Sierpnia, Września, Października, Listopada, Grudnia]
+    month_names_roman: [~, I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XII]
+    # Used in date_select and datime_select.
+    order: [ :day, :month, :year ]
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%d.%m.%Y %H:%M"
+      month:  "%B"
+    am: "am"
+    pm: "pm"
+
+# Used in array.to_sentence.
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " and "
+      last_word_connector: ", and "
+
+  subevents: Podwydarzenia
+  event: Wydarzenie
+  event date: Data wydarzenia
+  no subevents: Brak podwydarzeń
+  subevent add: Dodaj podwydarzenie
+  schedule: Harmonogram
+  editing subevent: Edycja podwydarzenia
+  new subevent: Nowe podwydarzenie
+  event_date: Data wydarzenia
+  new gallery: Nowa Galeria
+  edit gallery: Edycja Galerii
+  add photo: Dodaj zdjęcie
+  photos: Zdjęcia
+  delete: Usuń
+  Are you sure?: Czy jesteś pewien?
+  redirect: Przekierowanie na podstronę
+  choose: Wybierz
+  oryginal: oryginalny
+  choose_size: Wybierz rozmiar
+  add_image: Dodaj obrazek
+  new_training: Nowe szkolenie
+  editing training: Edycja szkoleń
+  add_training_module: Dodaj moduł szkoleniowy
+  place: Miejsce
+  university: Uniwersytet
+  comments: Komentarze
+  subject: Temat
+  add_new_comment: Dodaj nowy komentarz
+  send: Wyślij
+  user_wrote: Użytkownik {{user}} napisał/a
+  commentable: Komentowanie
+  user:
+    nick: Pseudonim
+    name: Użytkownik
+    login: Login
+    activated: Aktywny
+    email: Email
+    is_activated: Tak
+    not_activated: Nie
+    add: Dodaj użytkownika
+    new: Nowy użytkownik
+    activate: Aktywuj
+    roles: Role
+    add_role: Dodaj role
+    role: Rola
+  actions: Akcje
+  sign_up: Zarejestruj się
+  password: Hasło
+  password_confirmation: Powtórz hasło
+  cant_remove_this_element: Tego elementu nie można usunąć
+  add_layout: Dodaj layout
+  add_position: Dodaj pozycję
+  new_position: Nowa pozycja
+  edit_position: Edycja pozycji
+  cant_delete_main_panel: Nie możesz usunąć głównego panelu.
+  removal_will_cause_removal_of_all_subitems: Usunięcie tego elementu spowoduje usunięcie wszystkich elementów podrzędnych. Kontynuować?
+  cant_change_this_element: Nie można zmienić tego elementu, bądź wprowadzone dane są niepoprawne.
+
+

@@ -1,0 +1,19 @@
+<tr id="role_<%= role.id %>" class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>">
+  <td>
+    <div id="role_name_<%= role.id %>" class="user_role" style="cursor:move;">
+        <%= role.name %>
+    </div>
+  </td>
+  <td>
+    <% unless role.name.eql? "admin" %>
+      <%= link_to_remote_with_button({:button_color => "orange", :image => "edit", :size => "small"}, "",
+                                     :url =>{:controller => "users", :action => "edit_role", :id => role.id},
+                                     :complete => "$('#edit_role').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+      <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"}, "",
+                                     :url =>{:controller => "users", :action => "delete_role", :id => role.id},
+                                     :confirm => t('Are you sure?'), :method => :post) %>
+    <% end %>
+  </td>
+<%= draggable_element("role_name_#{role.id}".to_sym, :revert => true) %>
+</tr>
+<!--<%#= draggable_element("role_name_#{role.id}") %>-->

@@ -1,0 +1,14 @@
+<tr id="layout_template_<%= layout_template.id %>" class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>">
+    <td><%=h layout_template.name %></td>
+    <td><%=h layout_template.header_image %></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>
+      <%= link_to_remote_with_button({:button_color => "green", :image => "plus"}, t("add_position"), :url => {:controller => "positions", :action => "new", :id => layout_template.id},
+                     :complete => "$('#new_position').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+    </td>
+  </tr>
+  <% for position in layout_template.positions %>
+    <%= render :partial => "positions/row_form", :locals => {:position => position, :counter => counter} %>
+  <% end %>

@@ -1,0 +1,160 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+
+  message:
+    quotas:
+      no_qouta_create_one: There are no quotations to add, create one first
+      created: Quotation was successfully created.
+    item:
+      added: Item was successfully created.
+      updated: Item was successfully updated.
+      unmovable: Item can't be moved.
+    logged in successfully: Logged in successfully.
+    page:
+      created: Page was successfully created.
+    blog:
+      created: Blog was successfully created.
+    menu:
+      created: Menu was successfully created.
+
+  header: Header
+  
+  status:
+    name: Status
+    visible: Visible
+    hidden: Hidden
+    development: Development
+
+  menutype:
+    horizontal main menu: Horizontal main menu
+    vertical main menu: Vertical main menu
+    vertical main menu with children: Vertical main menu with children
+    childrens menu: Childrens menu
+
+  extensiontype:
+    menu: Menu
+    text: Text
+    quotation: Quotation
+    attachment: Attachment
+    event: Event
+    map: Map
+    blog menu: Blog menu
+    blog text: Post
+    gallery: Gallery
+
+  admin:
+    connect language: Connect language
+    page edit: Page edit
+    page delete: Delete page
+    new page: New page
+    add subpage: Add subpage
+    page administration: Page administration
+    add page: Add page
+
+  pagination:
+    previous_label: "« Previous"
+    next_label: "Next »"
+
+  add comment: Add comment
+  editing event: Editing event
+  header: Header
+  content: Content
+  tags: Tags
+  start_date: Start date
+  end_date: End date
+  char_showed: Characters showed on preview
+  as_post: Add as post
+  new text: New text
+  update: Update
+  show: Show
+  back: Back
+  are you sure?: Are you sure?
+  edit: Edit
+  destroy: Destroy
+  new event: New event
+  events: Events
+  create: Create
+  editing extension_type: Editing extension type
+  name: Name
+  description: Description
+  controller_name: Controller name
+  new extension_type: New extension type
+  extension_types: Extension types
+  search: Search
+  quotations: Quotations
+  new menu: New menu
+  menu_type: Menu type
+  menu depth: Menu depth
+  new blog menu: Nowe blog menu
+  blog owner: Blog owner
+  new blog text: New post
+  editing blog_text: Editing post
+
+  page:
+    parent: Parent page
+    new: New page
+    edit: Editing page
+
+  layout_template: Layout template
+  language: Language
+  new quota: New quotation
+  speaker: Speaker
+  company: Company
+  move up: Move up
+  move down: Move down
+  editing plain_text: Editing text
+  thumb_image: Thumb image
+  background_image: Background image
+  new attachment: New attachment
+  editing attachment: Editing attachment
+  latitude: Latitude
+  logitude: Logitude
+  editing location: Editing map
+  attachments: Attachments
+  add: Add
+  new news: New news
+  editing news: Editing news
+
+  blog:
+    new: New blog
+    edit: Editing blog
+
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%Y-%m-%d"
+      short: "%b %d"
+      long: "%B %d, %Y"
+      month:  "%B"
+
+    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    # Used in date_select and datime_select.
+    order: [ :year, :month, :day ]
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      short: "%d %b %H:%M"
+      long: "%B %d, %Y %H:%M"
+    am: "am"
+    pm: "pm"
+
+# Used in array.to_sentence.
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " and "
+      last_word_connector: ", and "
+
+ 
+
+  

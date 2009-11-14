@@ -1,0 +1,48 @@
+<%# content_for("admin") do %>
+
+  <div class="admin_center">
+  <div class="admin_left">
+    <p>
+      <% unless @page.nil? %>
+        <%= t('admin.connect language') %>
+        :
+        <% for language in unconnected_languages(page.connector) %>
+          <%= link_to image_tag("/images/flags/" + language.short_name + ".png", :title => language.name),
+                {:controller =>  "pages", :action =>  "new",
+                :language_id => language.id, :connector => page.connector, :parent_id => page.parent_id } %>
+        <% end %>
+        &nbsp; | &nbsp;
+      <% end %>
+      <%= t('quotations') %>
+      :
+      <%= link_to image_tag("/images/admin/quota.png", :title => t('quotations')), :controller => "quotas", :action => "index" %>
+    </p>
+  </div>
+  <div class="admin_right">
+    <p>
+      <%= t('admin.page administration') %>:
+      <% unless @page.nil? %>
+        <%= link_to image_tag("/images/admin/page_edit.png", :title => t('admin.page edit')), "/pages/#{page.id}/edit" %>
+        <%= link_to image_tag("/images/admin/page_delete.png", :title => t('admin.page delete')), page, :confirm => t('are you sure?'), :method => :delete %>
+      <% end %>
+      <%= t('admin.add page') %>:
+      <%= link_to image_tag("/images/admin/page_add.png", :title => t('admin.new page')), new_page_path %>
+      <% unless @page.nil? %>
+        <%= link_to image_tag("/images/admin/page_child_add.png", :title => t('admin.add subpage')), {:controller => :pages, :action =>  :new, :parent_id => page.id} %>
+      <% end %>
+    </p>
+  </div>
+
+
+    <p>
+      Admin:
+      <% if session[:admin].nil? || session[:admin] == :on %>
+        <%= link_to image_tag("/images/admin/admin_on.png", :title => t('turn admin off')), :controller => "pages", :action => "admin_on_off" %>
+      <% else %>
+        <%= link_to image_tag("/images/admin/admin_off.png", :title => t('turn admin on')), :controller => "pages", :action => "admin_on_off" %>
+      <% end %>
+    </p>
+
+  </div>
+
+<%# end %>

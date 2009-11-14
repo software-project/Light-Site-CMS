@@ -1,0 +1,15 @@
+<h2><%=h item.resource.header %></h2>
+<% counter = 0 %>
+<% for trm in item.resource.group_by_university %>
+<div id="university_<%= trm.university %>" style="padding:5px;">
+    <h3>
+      <%= link_to_function trm.university, visual_effect(:toggle_blind, "university_modules_#{ counter }") %>
+    </h3>
+    <div id="university_modules_<%= counter %>" style="display: none" class="university_mod">
+      <%= render :partial => "trainings/university_modules", :locals => { :university => trm.university, :training => item.resource} %>
+    </div>
+</div>
+    <% counter += 1 %>
+<% end %>
+
+

@@ -1,0 +1,24 @@
+  <div id="wrap">
+    <div id="header-main">
+      <%= yield :header%>
+    </div>
+    <div id="content">
+      <img src="/images/lap-top.png" alt="" />
+      <div class="items">
+        <% if flash[:notice] != nil %>
+          <p class="green"><%= flash[:notice] %></p>
+        <% end %>
+        <%= yield %>
+        <%= yield :content%>
+      </div>
+      <img src="/images/lap-bottom.png" alt="" />
+    </div>
+    <div id="side">
+      <img src="/images/lap-side-top.png" alt="" />
+      <div class="items">
+        <%= yield :side%>
+        <p>asdfd</p>
+      </div>
+      <img src="/images/lap-side-bottom.png" alt="" />
+    </div>
+  </div>

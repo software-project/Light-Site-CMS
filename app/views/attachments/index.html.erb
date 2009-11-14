@@ -1,0 +1,34 @@
+<h1>Listing attachments</h1>
+
+<table width="650px" cellpadding="0" cellspacing="0">
+  <tr>
+    <th>Content type</th>
+    <th width="100px">Filename</th>
+    <th>Thumbnail</th>
+    <th>Width</th>
+    <th>Height</th>
+    <th>Name</th>
+  </tr>
+
+<% counter = 0 %>
+<% for attachment in @attachments %>
+  <tr class="<%= counter % 2 == 0 ? "even" : "odd" %>">
+    <td><%=h attachment.content_type %></td>
+    <td><%=h attachment.filename[0..25] %></td>
+    <td><%=h attachment.thumbnail %></td>
+    <td><%=h attachment.width %></td>
+    <td><%=h attachment.height %></td>
+    <td><%=h attachment.name %></td>
+    <td>
+      <%= link_to image_tag("/images/admin/show.png"), attachment %>
+      <%= link_to image_tag("/images/admin/edit.png"), edit_attachment_path(attachment) %>
+      <%= link_to image_tag("/images/admin/delete.png"), attachment, :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+  <% counter = counter + 1 %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New attachment', :controller => "attachments", :action => "add" %>

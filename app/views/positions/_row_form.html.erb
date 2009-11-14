@@ -1,0 +1,31 @@
+<tr id="position_row_<%= position.id %>">
+    <td></td>
+    <td></td>
+    <td class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>"><%= position.name %></td>
+    <td class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>">
+      <% if position.main_position %>
+        <%= spinbox_field "page_position_pagination", position.id, :html =>{:size => 3, :value => position.page_pagination}, :min => 0,
+                          :changed => "function(v){#{remote_function(
+                                  :url => {:controller => "positions", :action => "change_pagination", :id => position.id},
+                                  :with => "'pagination='+ v" )}}"%>
+          <%=observe_field "page_position_pagination_#{position.id}",
+                           :url => { :controller => "positions", :action => "change_pagination", :id => position.id },
+                           :frequency => 1,
+                           :with => "'pagination='+$('#page_position_pagination_#{position.id}').val()" %>
+      <% end %>
+    </td>
+    <td class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>">
+      <%= radio_button_tag("prosition_#{position.id}_rb", position.main_position ? 1:0,position.main_position,
+          :name => "prosition_#{position.layout_template.id}_rb",
+          :onclick => "#{remote_function :url => {:controller => "positions", :action => "change_main_position", :id => position.id}}") %>
+      <%= position.main_position ? t("user.is_activated"):t("user.not_activated") %>
+    </td>
+    <td class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>">
+      <%= link_to_remote_with_button({:button_color => "orange", :image => "edit", :size => "small"}, "",
+                :url => {:controller => "positions", :action => "edit", :id => position.id},
+                :complete => "$('#edit_position').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+      <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"}, "",
+                :url => {:controller => "positions", :action => "destroy", :id => position.id},
+                :confirm => t('removal_will_cause_removal_of_all_subitems'), :method => :post) %>
+    </td>
+</tr>

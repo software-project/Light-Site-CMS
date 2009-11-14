@@ -1,0 +1,170 @@
+/* 
+    Document   : menu
+    Created on : 2009-03-23, 16:48:51
+    Author     : Martin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.menu_1{
+	clear: both;
+    margin: 0 0 0 0;
+	padding: 110px 0 0 20px;
+	width: 900px;
+	height: 40px;
+}
+
+.menu_1 a{
+    text-decoration: none;
+    color: white;
+    font-family: Geneva,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+/*.menu_1 a:hover{
+    text-decoration: underline;
+    color: yellow;
+}*/
+
+.menu_1 ul{
+	float: left;
+	list-style: none;
+	margin: 5px 0 0 0;
+	height: 35px;
+	padding: 0 0 0 0px;
+}
+
+.menu_1 ul li{
+	float: left;
+	margin: 0; padding: 0 5px 0 10px;
+}
+
+.menu_1 li ul{
+	list-style: none;
+    float: none;
+    height: 100px;
+    visibility: hidden;
+}
+.menu_1 li ul li{
+    float: none;
+    height: auto;
+    width: 10px;
+}
+
+.menu_1 li:hover ul{
+	list-style: none;
+    float: none;
+    height: auto;
+    visibility: visible;
+    background: #00aef0;
+}
+.menu_1 li:hover ul li{
+    width: auto;
+}
+
+/*
+menu 4
+*/
+
+.menu_4{
+	clear: both;
+    margin: 0 0 0 0;
+	padding: 0;
+	width: 200px;
+}
+
+.menu_4 a{
+    text-decoration: none;
+    color:  gray;
+    font-family: Geneva,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+/*
+.menu_4 a:hover{
+    text-decoration: underline;
+    color: orange;
+}*/
+
+.menu_4 ul{
+	list-style: none;
+	margin: 5px 0 0 0;
+	padding: 0 0 0 0px;
+}
+
+.menu_4 ul li{
+	margin: 0;
+    padding: 0 5px 5px 0px;
+}
+
+#menu{
+	width: 250px;
+	padding: 0 0 40px 0;
+    margin-left: -1px;
+    font-size: 1em;
+    text-align: left;
+}
+
+#menu li ul{
+    padding-bottom: 10px;
+}
+
+#menu li li{
+    font-size: 0.8em;
+}
+
+#menu li:hover ul li{
+    width: auto;
+}
+
+.inner_menu{
+    min-height: 250px
+}
+
+#selected-page{
+    background: url("/images/menu_select.gif") top left repeat-x;
+}
+
+#selected-page a{
+    color: #400808;
+}
+
+/*.admin-menu li ul{*/
+    /*position: relative;*/
+    /*left: -900px;*/
+	/*list-style: none;*/
+    /*float: none;*/
+/*}*/
+/*.admin-menu li ul li{*/
+    /*float: none;*/
+/*}*/
+
+/*.admin-menu li{      */
+    /*padding:0;*/
+    /*margin:0;*/
+/*}*/
+
+/*.admin-menu li:hover ul{*/
+	/*list-style: none;*/
+    /*float: none;*/
+    /*left: 900px;*/
+    /*height: auto;*/
+/*}*/
+
+.spinner_table{
+    margin: 0 0 -5px 5px;
+    width: 60px;
+}
+
+.numerical{
+    text-align: right;
+    width: 25px;
+}
+
+

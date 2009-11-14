@@ -1,0 +1,27 @@
+.quota{
+    display: inline-block;
+    background: #dddddd no-repeat top left;
+    padding: 10px 2px 0px 0px;
+    border: 1px solid #00aef0;
+    margin: 0;
+    width: 206px;
+}
+.quota-text{
+    text-align: justify;
+    }
+.quota-text img{
+    padding: 0 4px 0 0;
+}
+
+.quota-author{
+    float: right;
+    text-align: right;
+    font-weight: bold; 
+}
+
+.quota-company{
+    float: right;
+    text-align: right;
+    font-weight: bold;
+    color: #777777;
+}

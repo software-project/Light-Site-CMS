@@ -1,0 +1,14 @@
+<% unless item.nil? %>
+    <% bg = "" %>
+    <% unless item.resource.thumb_attachment.nil? %>
+      <% bg = "<div style=\"width: 220px; max-width: 220px; min-width:220px; height: 90px; max-height: 90px; min-height:90px; background: transparent url('#{item.resource.thumb_attachment.public_filename(:medium)}') center no-repeat;\"></div>" %>
+    <% end %>
+
+<div class="yui-u <%= "first" if defined?"first" && first %>">
+  <%= bg %>
+  <h2 class="news-info">
+    <%= link_to item.resource.header, item.resource  %>
+  </h2>
+  <%= link_to "więcej >>", item.resource, :style => "float: right; color:#740009;"  %>
+</div>
+<% end %>

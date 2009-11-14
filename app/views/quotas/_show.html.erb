@@ -1,0 +1,13 @@
+<% quota = get_quotas %>
+<h3>Mówią o nas:</h3>
+<div class="quota">
+<p class="quota-text">
+  <img src="/images/quota.png" alt="" width="28px" height="28px" align="left" />
+  <%= quota.content %>
+</p>
+<div class="quota-author">
+<p><%=h quota.speaker %></p>
+<p class="quota-company">
+<%=h quota.company %></p>
+</div>
+</div>

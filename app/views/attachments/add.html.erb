@@ -1,0 +1,19 @@
+<h1><%= t('new attachment') %></h1>
+
+<% form_for(@attachment, :url => {:action => :create_single}, :html => { :multipart => true }) do |f| -%>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label t('name') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label t('extensiontype.attachment') %><br />
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= f.hidden_field :plain_text_id %>
+    <%= f.submit t('create') %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), :back %>

@@ -1,0 +1,19 @@
+<h1><%= t('editing news') %></h1>
+
+<% form_for(@news) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label t :content %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.submit t('update') %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), :back %>

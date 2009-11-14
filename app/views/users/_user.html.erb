@@ -1,0 +1,35 @@
+
+  <tr id="user_<%= user.id %>" class="<%= counter % 2 == 0 ? "ext_even" : "ext_odd" %>">
+    <td>
+      <%= user.login %>
+    </td>
+    <td>
+      <%= user.name %>
+    </td>
+    <td>
+      <%= user.email %>
+    </td>
+    <td>
+      <% if user.active? %>
+        <%= t("user.is_activated") %>
+      <% else %>
+        <%= link_to_remote_with_button({:button_color => "green", :image => "arrow"}, t("user.activate"), :url =>{:controller => "users", :action => "activate_user", :id => user.id }) %>
+      <% end %>
+    </td>
+    <td>
+      <ul id="user_roles_<%= user.id %>">
+        <% for role in user.roles %>
+            <%= render :partial => "users/user_role", :locals => {:role => role, :user => user} %>
+        <% end %>
+      </ul>
+    </td>
+    <td>
+      <%= link_to_remote_with_button({:button_color => "orange", :image => "edit", :size => "small"}, "", :url =>{:controller => "users", :action => "edit_user", :id => user.id},:complete => "$('#edit_user').dialog({  bgiframe: true, modal: true});", :method => :get) %>
+      <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"}, "", :url =>{:controller => "users", :action => "delete", :id => user.id},:confirm => t('Are you sure?'), :method => :post) %>
+    </td>
+  </tr>
+  <%= drop_receiving_element("user_#{user.id}".to_sym,
+                             :url =>{ :controller => "users", :action => "assign_role", :id => user.id },
+                             :before => visual_effect(:highlight, "user_#{user.id}"),
+                             :with   => "'role_id=' + ($(ui.draggable).attr('id'))",
+                             :accept => ".user_role") %>

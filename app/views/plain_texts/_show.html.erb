@@ -1,0 +1,47 @@
+
+<div  class="post <%= "blog-post" if item.resource.post %> post-<%= post_class_name(counter, is_last) -%>" id="<%= item.order %>"
+      <%= "style=\"min-height: #{post_min_height(item)}px;\"" -%>>
+<% if item.resource.post %>
+  <div class="blog-date">
+    <h1><%= item.resource.created_at.strftime('%d') -%></h1>
+    <h4><%= t("date.month_names_roman")[item.resource.created_at.month] + "<br/>" + item.resource.created_at.year.to_s %></h4>
+  </div>
+<% end %>
+  <h2><%= link_to item.resource.header, item.resource %></h2>
+
+    <% unless item.resource.thumb_attachment.nil? %>
+      <%= image_tag(item.resource.thumb_attachment.public_filename(:thumb)) %>
+    <% end %>
+    <p>
+      <%= preview_text(item.resource) %>
+    </p>
+
+  <% if item.resource.attachments.size > 0 %>
+  <h3><%= t('attachments') %></h3>
+  <p>
+    <% for attachment in item.resource.attachments %>
+      <%= link_to get_icon(attachment.filename) + attachment.name, attachment.public_filename %><br/>
+    <% end %>
+  </p>
+  <% end %>
+  <% if item.resource.post %>
+      <div class="post-footing">
+        <p>
+          <% html = "" %>
+          <% item.resource.tag_list.each{|tag| html << link_to(tag,:controller => "pages", :action => "tag", :tag => permalink(tag)) + " "} %>
+          Tagi: <%= html %> &nbsp;&nbsp;|&nbsp;&nbsp;
+          Komentarzy: <%= item.resource.comments.size %>
+        <span style="position: relative; float: right; "><%= link_to 'więcej >>', { :controller => 'plain_texts', :action => 'show', :id => item.resource.id}, :style => "color: #740009;" %></span>
+        </p>
+      </div>
+  <% end %>
+
+    <!--<div style="margin-top: <%= (item.resource.showed_signs_on_preview != 0 ? 30:0)+(item.resource.post ? 30:0) %>px">-->
+      <%# if item.resource.showed_signs_on_preview != 0 %>
+      <!--<p class="more">-->
+        <%#= link_to 'Więcej >>', { :controller => 'plain_texts', :action => 'show', :id => item.resource.id} %>
+      <!--</p>-->
+      <%# end %>
+    <!--</div>-->
+</div>
+

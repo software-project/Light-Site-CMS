@@ -1,0 +1,40 @@
+<% content_for("content") do %>
+  <h1><%= t('page.new') %></h1>
+  
+    <% form_for(:page, @page, :url => {:controller => "pages", :action =>  "create"}, :html => { :name => "page_" } ) do |f| %>
+    <%= f.error_messages %>
+  <!--<div>-->
+  	<%#= ExtensionManager.ajax_list_for("page", "new") %>
+  <!--</div>-->
+    <p>
+      <%= f.label t('name') %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label t('language') %><br />
+      <%= f.collection_select( :language_id, unconnected_languages(@page.connector), :id, :name) -%>
+    </p>
+    <p>
+      <%= f.label t('status.name') %><br />
+      <%= f.collection_select( :status_id, t_collection(Status.find(:all)), :id, :name) -%>
+    </p>
+    <p>
+      <%= f.label t('layout_template') %><br />
+      <%= f.collection_select( :layout_template_id, LayoutTemplate.find(:all), :id, :name_with_image) -%>
+    </p>
+    <% if @page.parent_id.nil? %>
+      <p>
+        <%= f.label t('page.parent') %><br />
+        <%= f.collection_select( :parent_id, Page.find(:all), :id, :name, {:include_blank  => true}) -%>
+      </p>
+    <% else %>
+      <%= f.hidden_field :parent_id %>
+    <% end %>
+    <%= f.hidden_field :connector %>
+    <%= ExtensionManager.render(:position => "page", :action => "new", :form => f, :view => self) %>
+    
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+  </p>
+  <% end %>
+<% end %>

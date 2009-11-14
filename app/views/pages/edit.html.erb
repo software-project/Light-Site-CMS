@@ -1,0 +1,32 @@
+<h1><%= t('page.edit') %></h1>
+
+<% form_for(@page) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('name') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <%#*<p>%>
+    <%#= f.label t('language') %>
+    <%#= f.collection_select( :language_id, unconnected_languages(@page.connector), :id, :name) -%>
+  <%#*</p>%>
+  <p>
+    <%= f.label t('status.name') %><br />
+    <%= f.collection_select( :status_id, t_collection(Status.find(:all)), :id, :name) -%>
+  </p>
+  <p>
+    <%= f.label t('layout_template') %><br />
+    <%= f.collection_select( :layout_template_id, LayoutTemplate.find(:all), :id, :name_with_image ) -%>
+  </p>
+  <p>
+    <%= f.label t('redirect') %><br />
+    <%= f.collection_select( :redirect, Page.find_all_by_parent_id(@page.id), :id, :name, {:include_blank  => true} ) -%>
+  </p>
+    <%= ExtensionManager.render(:position => "page", :action => "new", :form => f, :view => self) %>
+  <p>
+    <%= f.submit t('update') %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), :back %>

@@ -1,0 +1,51 @@
+<h1><%= t("edit gallery") %></h1><br/>
+<% form_for(item.resource, :html => { :name => "gallery_#{item.resource.id}" }) do |f| %>
+
+  <%= f.error_messages %>
+  <p>
+    <%= f.label t('name')+':' %><br />
+    <%= f.text_field :name %>
+  </p>
+  <br/>
+  <h4><%= t("photos") %></h4>
+  <%= link_to_with_button({:button_color => "green", :image => "plus"},t("add photo"), {:controller => "gallery_photos", :action => "new", :item => item.id}, :id => "image_add" )  %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#image_add").fancybox({
+         'hideOnContentClick': false,
+         'frameWidth': 640,
+         'frameHeight': 450
+      });
+    });
+  </script>
+  <div>
+    <% for photo in item.resource.gallery_photos -%>
+      <p style="clear:both; margin: 5px">
+        <%= image_tag(photo.public_filename(:thumb), :style => "float: left; padding: 5px")  %>
+        <h3>
+          <%= photo.name %>
+        </h3>
+        <%= photo.description %>
+      </p>
+      <p style="clear:both">
+      <%= link_to_with_button({:button_color => "orange", :image => "edit"},t("edit"), {:controller => 'gallery_photos', :action => 'edit',
+          :id => photo.id}, :id => "image_edit_#{photo.id}",:onclick=>"try{editor.destroy();}catch(err){} " )  %>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $("#image_edit_<%= photo.id %>").fancybox({
+             'hideOnContentClick': false,
+             'frameWidth': 640,
+             'frameHeight': 450
+          });
+        });
+      </script>
+      <%= link_to_with_button({:button_color => "red", :image => "cross"},t("delete"), {:controller => 'gallery_photos', :action => 'destroy',
+          :id => photo.id}, :confirm => t('Are you sure?'), :method => :delete)  %>
+        </p>
+    <% end %>
+  </div>
+  <p style="clear:both">
+    <%= f.submit_with_javascript( t('update')) %>
+    <%= link_to_with_button({:button_color => "red", :image => "back"},t("back"), :back)  %>
+  </p>
+<% end %>

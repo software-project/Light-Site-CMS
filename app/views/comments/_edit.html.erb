@@ -1,0 +1,15 @@
+<h3><%= t('add comment') %></h3>
+
+<% form_for(:comment, :url => {:controller => 'comments', :action => 'create'}) do |f| %>
+  <%= f.error_messages %>
+   <p>
+    <%= f.ckeditor_field :content %>
+  </p>
+  <%= f.hidden_field :user_id %>
+  <%= f.hidden_field :blog_text_id %>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+

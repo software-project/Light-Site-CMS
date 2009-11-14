@@ -1,0 +1,39 @@
+<div class="post-comment">
+  <h2>
+    <%= t("comments") %>
+  </h2>
+  <% counter = 1 %>
+  <div id="comments_for_<%= item.id.to_s %>">
+      <% for comment in item.comments %>
+        <%= render :partial => "comments/comment", :locals => {:comment => comment, :counter => counter} %>
+        <% counter += 1 %> 
+      <% end %>
+  </div>
+  <% remote_form_for :comment, Comment.new, :url => {:controller => "comments", :action => "new", :item => item}, :complete => "$('#new_comment_form').reset();", :html => {:id => "new_comment_form"} do |comment_form| %>
+
+  <h2>
+    <%= t("add_new_comment") %>
+  </h2>
+  <p>
+    <%= comment_form.label t("subject") %><br/>
+    <%= comment_form.text_field :subject %>
+  </p>
+  <p>
+    <%= comment_form.label t("content") %><br/>
+    <%= comment_form.text_area :content,:size => "70x5"  %>
+  </p>
+  <p>
+    <% if !current_user.nil? %>
+        <%= comment_form.hidden_field :user_id, :value => current_user.id %>
+    <% else %>
+        <%= comment_form.label t("user.nick") %><br/>
+        <%= comment_form.text_field :user_name %>
+    <% end %>
+  </p>
+  <p>
+    <%= comment_form.hidden_field :commentable_id, :value => item.id %>
+    <%= comment_form.hidden_field :commentable_type, :value => item.class %>
+    <%= comment_form.submit t("send") %>
+  </p>
+  <% end %>
+</div>

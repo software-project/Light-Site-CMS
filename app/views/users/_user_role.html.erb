@@ -1,0 +1,7 @@
+<li id="user_<%= user.id %>_role_<%= role.id %>">
+  <p><%= role.name %>
+      <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"}, "",
+                                     :url =>{:controller => "users", :action => "remove_role", :id => user.id, :role_id => role.id},
+                                     :confirm => t('Are you sure?'), :method => :post) %>
+  </p>
+</li>

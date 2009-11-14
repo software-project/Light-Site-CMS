@@ -1,0 +1,20 @@
+<h1>Editing plain_text</h1>
+
+<% form_for(@plain_text) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label :content %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @plain_text %> |
+<%= link_to 'Back', plain_texts_path %>

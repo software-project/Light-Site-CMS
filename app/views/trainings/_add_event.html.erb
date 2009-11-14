@@ -1,0 +1,37 @@
+<% form_for(training_module_event, :url => {:controller => "trainings", :action => "add_event"} ,:html => { :multipart => true ,
+      :id => "training_module_#{training_module.id}", :name => "new_module", :id => "new_module_form" }) do |form| -%>
+  <p>
+    <%= form.label t(:university) %>
+    <%= form.text_field :university %>
+    <%= form.hidden_field :training_module_id, :value => training_module.id  %>
+
+  </p><br/>
+  <p>
+    <%= form.label t(:place) %><br/>
+    <%= form.ckeditor_field :place %>
+  </p><br/>
+  <p>
+    <%= form.label t(:event_date) %>
+    <%= form.datetime_select :event_date %>
+  </p><br/>
+    <p>
+    <a href="javascript: document.new_module.submit();">
+    <div class="bt" id="submit_bt">
+      <div class="bt-green-l"></div>
+      <div class="bt-green-c"><%= t("add") %></div>
+      <div class="bt-green-arrow"></div>
+    </div>
+  </a>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#submit_bt").mouseover(function(){
+        $(this).children("div").css("background-position", 'bottom left');
+      });
+      $("#submit_bt").mouseout( function(){
+        $(this).children("div").css("background-position", 'top left');
+      });
+    });
+  </script>
+  </p>
+  <br/>
+<% end -%>

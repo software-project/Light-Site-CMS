@@ -1,0 +1,51 @@
+<%#*Panel administracyjny%>
+<%#= render(:partial => "shared/admin", :locals => {:page => @page}) %>
+
+<%# content_for("header") do %>
+  <%#*<div class="lang_select">%>
+    <%#= language_linker(@page) %>
+  <%#*</div>%>
+  <%#*<div class="menu_1">%>
+    <%#= menu_form(Page.find(:first), 1, 0) %>
+  <%#*</div>%>
+<%# end %>
+<% for block in @page.blocks %>
+  <% content_for(block.position.name) do %>
+    <%#*Dodawanie nowych elementów%>
+    <% if admin? && admin_on_off %>
+      <% form_for :item, :url => {:controller => :items, :action => 'new', :block =>  block.id } do |select_form| %>
+        <p><%= label_tag 'Rozszerzenie' -%>
+          <%= select_form.collection_select( :extension_type_id, t_collection(ExtensionType.find(:all)), :id, :name) -%>
+          <%= submit_tag 'Dodaj' %>
+        </p>
+      <% end %>
+    <% end %>
+    <%#*Wstawia rozszerzenia dla strony%>
+    <% counter = 1 %>
+    <% visible_items = visible_items(block.items) %>
+    <% for item in (block.position.name.eql?("content") ? @items : block.items) %>
+      <% if admin? && admin_on_off %>
+        <div class="admin_panel">
+          <% if (params[:edit].to_i == item.id) %>
+            <%= render(:partial => "#{item.extension_type.controller_name}/edit", :locals => {:item => item, :page => @page}) %>
+          <% else %>
+            <%= render(:partial => "#{item.extension_type.controller_name}/show", :locals => {:item => item, :page => @page, :counter => counter, :is_last => (counter == visible_items)}) %>
+          <% end %>
+          
+          <%= render(:partial => "shared/item_admin_panel", :locals => {:item => item, :page => @page}) %>
+        </div>
+        <% counter += 1 %>
+      <% else %>
+        <% if item.status.name == "Visible" %>
+          <%= render(:partial => "#{item.extension_type.controller_name}/show", :locals => {:item => item, :page => @page, :counter => counter, :is_last => (counter == visible_items) }) %>
+          <% counter += 1 %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if @main_position.page_pagination != 0 %>
+<%= will_paginate @items %>
+<% end %>
+

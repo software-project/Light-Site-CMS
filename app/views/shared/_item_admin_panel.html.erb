@@ -1,0 +1,14 @@
+<div class="item_admin">
+
+<% form_for item, :url => "/items/change_status/#{item.id}/" do |f| %>
+  <%= f.label t('status.name')+":" %>
+  <%= f.collection_select(:status_id, t_collection(Status.find(:all)), :id, :name,{}, { :onchange => "this.form.submit();"}) -%>
+<% end %>
+Przenieś:
+<%= link_to image_tag("/images/admin/arrow_up.png", :title => t('move up')), "/items/move_up/#{item.id}" -%>
+<%= link_to image_tag("/images/admin/arrow_down.png", :title => t('move down')), "/items/move_down/#{item.id}" -%>
+<% unless @page.nil? %>
+    <%= link_to image_tag("/images/admin/page_edit.png", :title => t('edit')), {:action => "show", :language =>session[:language].short_name, :name => @page.slug, :edit => item.id} %>
+<% end %>
+<%= link_to image_tag("/images/admin/page_delete.png", :title => t('delete')), item, :confirm => t('are you sure?'), :method => :delete %>
+</div>

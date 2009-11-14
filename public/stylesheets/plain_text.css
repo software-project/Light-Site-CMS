@@ -1,0 +1,27 @@
+.post{
+    /*background: transparent url(/images/separator.jpg) no-repeat bottom center;*/
+    border-bottom: 1px dashed #00aef0;
+    padding: 10px 0 20px 0;
+    text-align: justify;
+}
+
+.post_info{
+    display:inline-table;
+    float: right;
+    width : 620px;
+    text-align: right;
+    padding-right: 5px;
+    padding-bottom: 20px;
+}
+
+.post_tags{
+    width : 200px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}
+
+.post_comments{
+    width : 200px;
+    padding-left: 10px;
+    padding-bottom: 15px;
+}

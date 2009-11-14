@@ -1,0 +1,32 @@
+<h1><%= t('editing event') %></h1>
+
+<% form_for(@event) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('header') %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label t('content') %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label t('start_date') %><br />
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label t('end_date') %><br />
+    <%= f.date_select :end_date %>
+  </p>
+  <p>
+    <%= f.label t('char_showed') %><br />
+    <%= f.text_field :char_showed %>
+  </p>
+  <p>
+    <%= f.submit t('update') %>
+  </p>
+<% end %>
+
+<%= link_to t('show'), @event %> |
+<%= link_to t('back'), events_path %>

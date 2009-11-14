@@ -1,0 +1,6 @@
+admin_is_admin:
+  user_id: 1 # admin
+  role_id: 1 # admin role
+aaron_is_blogger:
+  user_id: 2 # aaron
+  role_id: 2 # blog role

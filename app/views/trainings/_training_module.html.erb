@@ -1,0 +1,42 @@
+
+<tr id="training_module_<%= training_module.id %>">
+  <td style="border-top: 1px dashed; border-color:#dddddd;">
+    <%= training_module.name %>
+  </td>
+  <td style="border-top: 1px dashed; border-color:#dddddd;">
+    <%= training_module.content %>
+  </td>
+  <td style="min-width:90px;border-top: 1px dashed; border-color:#dddddd;">
+    <%= link_to_with_button({:button_color => "green", :image => "plus"},"Dodaj", {:controller => "trainings", :action => "add_event", :id => training_module.id}, :id => "add_event_#{training_module.id}") %>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $("#add_event_<%= training_module.id %>").fancybox({
+             'hideOnContentClick': false,
+             'callbackOnClose': function(){CKEDITOR.instances.training_module_event_place.destroy();},
+             'frameWidth': 640,
+             'frameHeight': 450
+          });
+        });
+      </script>
+  </td>
+  <td style="border-top: 1px dashed; border-color:#dddddd;"></td>
+  <td style="border-top: 1px dashed; border-color:#dddddd;">
+    <%= link_to_with_button({:button_color => "orange", :image => "edit", :size => "small"}, "", {:controller => "trainings", :action => "edit_module", :id => training_module.id}, :id => "edit_module_#{training_module.id}") %>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#edit_module_<%= training_module.id %>").fancybox({
+         'hideOnContentClick': false,
+         'callbackOnClose': function(){CKEDITOR.instances.training_module_content.destroy();},
+         'frameWidth': 640,
+         'frameHeight': 450
+      });
+    });
+  </script>
+    <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"},"", :url => {:controller => "trainings", :action => "delete_module", :id => training_module.id}) %>
+  </td>
+</tr>
+<% counter = 1 %>
+<% for event in training_module.training_module_events %>
+    <%= render :partial => "trainings/event", :locals => {:event => event, :counter => counter} %>
+    <% counter += 1 %>
+<% end %>

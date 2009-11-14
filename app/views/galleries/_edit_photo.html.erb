@@ -1,0 +1,31 @@
+<% form_for(@photo ,:html => { :multipart => true ,
+      :id => "gallery_form_#{@photo.id}", :name => "edit_photo" }) do |form| -%>
+  <p>
+    <label for="name"><%= t("name")  %>:</label><br/>
+    <%= form.text_field :name, :id => "gallery_name_form_#{@photo.id}" %>
+  </p><br/>
+  <p>
+    <label for="description"><%= t("description")  %>:</label><br/>
+    <%= form.ckeditor_field :description %>
+  </p><br/>
+  <p>
+  <a href="javascript: document.edit_photo.submit();">
+    <div class="bt" id="submit_bt">
+      <div class="bt-green-l"></div>
+      <div class="bt-green-c"><%= t("update") %></div>
+      <div class="bt-green-arrow"></div>
+    </div>
+  </a>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("#submit_bt").mouseover(function(){
+        $(this).children("div").css("background-position", 'bottom left');
+      });
+      $("#submit_bt").mouseout( function(){
+        $(this).children("div").css("background-position", 'top left');
+      });
+    });
+  </script>
+  </p>
+  <br/>
+<% end -%>

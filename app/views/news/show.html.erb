@@ -1,0 +1,13 @@
+<p>
+  <b>Header:</b>
+  <%=h @news.header %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @news.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_path %>

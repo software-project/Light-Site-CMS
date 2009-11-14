@@ -1,0 +1,23 @@
+<p>
+  <b>Content:</b>
+  <%=h @quota.content %>
+</p>
+
+<p>
+  <b>Speaker:</b>
+  <%=h @quota.speaker %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%=h @quota.company %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%=h @quota.language_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_quota_path(@quota) %> |
+<%= link_to 'Back', quotas_path %>

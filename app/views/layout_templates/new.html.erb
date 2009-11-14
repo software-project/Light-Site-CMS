@@ -1,0 +1,19 @@
+<h1>New layout_template</h1>
+
+<% form_for(@layout_template) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :header_image %><br />
+    <%= f.text_field :header_image %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', layout_templates_path %>

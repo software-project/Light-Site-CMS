@@ -1,0 +1,60 @@
+<h1><%= t('editing event') %></h1>
+
+<% form_for(item.resource, :html => { :name => "event_#{item.resource.id}" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('header') %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.label t('content') %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label t('start_date') %><br />
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label t('end_date') %><br />
+    <%= f.date_select :end_date %>
+  </p>
+  <p>
+    <%= f.label t('char_showed') %>
+    <%= f.spinbox_field :char_showed, :html => {:value => item.resource.char_showed}, :min => 0 %>
+    <br />
+    <br />
+  </p>
+  <p>
+    <%= f.label t('subevents') %>:
+    <%= link_to image_tag('/images/admin/add.png', :title => t('subevent add')), :controller => 'subevents', :action => 'new', :event => item.resource.id %>
+    <br />
+  </p>
+    <% if item.resource.subevents.size > 0 %>
+    <table>
+      <tr>
+        <th><%= t('event date') %></th>
+        <th><%= t('content') %></th>
+      </tr>
+    <% for subevent in item.resource.subevents %>
+      <tr>
+        <td><%= l(subevent.event_date, :format => :long) %></td>
+        <td><%= subevent.content %></td>
+        <td><%= link_to image_tag("/images/admin/show.png",:title => t('show')), subevent %>
+            <%= link_to image_tag("/images/admin/edit.png",:title => t('edit')), edit_subevent_path(subevent) %>
+            <%= link_to image_tag("/images/admin/delete.png",:title => t('destroy')), subevent, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+    </table>
+    <% else %>
+        <b><%= t('no subevents') %></b>
+    <% end %>
+    <br />
+  <p>
+    <br />
+    <%= f.submit_with_javascript( t('update')) %>
+  </p>
+<% end %>
+
+<%= link_to t('show'), item.resource %> |
+<%= link_to t('back'), :back %>

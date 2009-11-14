@@ -1,0 +1,27 @@
+<h1><%= t('new quota') %></h1>
+
+<% form_for(@quota) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('content') %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label t('speaker') %><br />
+    <%= f.text_field :speaker %>
+  </p>
+  <p>
+    <%= f.label t('company') %><br />
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label t('language') %><br />
+    <%= f.collection_select( :language_id, Language.find(:all), :id, :name) -%>
+  </p>
+  <p>
+    <%= f.submit t('create') %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), quotas_path %>

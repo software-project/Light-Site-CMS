@@ -1,0 +1,60 @@
+<div class="gallery">
+  <h2>
+    <%= item.resource.name %>
+  </h2>
+  <div id="<%= "gallery_#{item.resource.id}"  %>">
+    <% if item.resource.gallery_photos.length > 0  %>
+      <table>
+        <tr>
+          <td>
+            <%= image_tag(item.resource.gallery_photos[0].public_filename(:preview),
+              {:id => "gallery_preview_#{item.resource.id}"}) %>
+          </td>
+          <td>
+            <div id="<%= "gallery_description_#{item.resource.id}" %>">
+              <h3>
+                <%= item.resource.gallery_photos[0].name %>
+              </h3>
+              <p>
+                <%= item.resource.gallery_photos[0].description %>
+              </p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+  <table>
+    <tr>
+  <% for photo in item.resource.gallery_photos -%>
+      <td class="gallery_item">
+      <%= link_to image_tag(photo.public_filename(:thumb), {
+          :onMouseOver => "$(\"#gallery_description_#{item.resource.id}\").html($(\"#photo_#{photo.id}_description\").html());
+            document.getElementById(\"gallery_preview_#{item.resource.id}\").src=\"#{photo.public_filename(:preview)}\";"
+        }),
+        photo.public_filename, {:class => "gallery_#{item.resource.id}",
+        :rel => "gallery_#{item.resource.id}"}  %>
+
+      <h4>
+        <%= photo.name %>
+      </h4>
+
+      <div id="photo_<%= photo.id %>_description" style="display: none">
+        <h3>
+          <%= photo.name %>
+        </h3>
+        <p>
+          <%= photo.description %>
+        </p>
+      </div>
+    </td>
+  <% end -%>
+    </tr>
+  </table>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $("a.<%="gallery_#{item.resource.id}"%>").fancybox();
+    });
+  </script>
+</div>

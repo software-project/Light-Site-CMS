@@ -1,0 +1,39 @@
+<h1><%= t('editing training') %></h1>
+
+<% form_for(item.resource, :html => { :name => "training_#{item.resource.id}" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= link_to_with_button({:button_color => "green", :image => "plus"}, t("add_training_module"), {:controller => "trainings", :action => "add_module", :id => item.resource.id}, :id => "add_module") %>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#add_module").fancybox({
+         'hideOnContentClick': false,
+         'callbackOnClose': function(){CKEDITOR.instances.training_module_content.destroy();},
+         'frameWidth': 640,
+         'frameHeight': 450
+      });
+    });
+  </script>
+    <%#= link_to_remote "nowy", :url => {:controller => "trainings", :action => "add_module", :id => item.resource.id }, :html =>{ :id => "add_module"}  %>
+  </p>
+    <table id="modules_table" style="max-width:680px;">
+      <tr style="max-width:680px;">
+        <th style="width: 100px;">Nazwa modułu</th>
+        <th style="width: 300px;">Opis</th>
+        <th style="width: 200px;">Miejsca</th>
+        <th style="width: 100px;"></th>
+        <th style="width: 70px;">Akcje</th>
+      </tr>
+      <% for training_module in item.resource.training_modules %>
+        <%= render :partial => "trainings/training_module", :locals => {:training_module => training_module } %>
+      <% end %>
+    </table>
+  <p>
+    <%= f.submit_with_javascript( t('update')) %>
+  </p>
+<% end %>

@@ -1,0 +1,12 @@
+<p>
+  <b><%= t('name') %>:</b>
+  <%=h @extension_type.name %>
+</p>
+<p>
+  <b><%= t('controller_name') %>:</b>
+  <%=h @extension_type.controller_name %>
+</p>
+
+
+<%= link_to t('edit'), edit_extension_type_path(@extension_type) %> |
+<%= link_to t('back'), extension_types_path %>

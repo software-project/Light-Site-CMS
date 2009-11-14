@@ -1,0 +1,20 @@
+<h1>Listing layout_templates</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% for layout_template in @layout_templates %>
+  <tr>
+    <td><%=h layout_template.name %></td>
+    <td><%= link_to 'Show', layout_template %></td>
+    <td><%= link_to 'Edit', edit_layout_template_path(layout_template) %></td>
+    <td><%= link_to 'Destroy', layout_template, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New layout_template', new_layout_template_path %>

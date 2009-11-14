@@ -1,0 +1,16 @@
+<h1><%= t('editing attachment') %></h1>
+
+<% form_for(item.resource, :html => { :name => "attachment_#{item.resource.id}" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t('name') %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('update')) %>
+  </p>
+<% end %>
+
+<%= link_to t('show'), @attachment %> |
+<%= link_to t('back'), attachments_path %>

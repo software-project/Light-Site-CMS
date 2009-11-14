@@ -1,0 +1,17 @@
+ <% posts=items %>
+ <% if posts.length != 0 %>
+ <h3><%= year = posts.first.created_at.year   %></h3><br>
+     <% while posts.length != 0  %>
+        <% if year != posts.first.created_at.year %>
+          <h3><%= year = posts.first.created_at.year   -%><br></h3>
+        <% end %>
+        <% posts_tmp=posts.find_all{|p| p.created_at.year == year && p.created_at.month == posts.first.created_at.month} %>
+        <%=  link_to l(posts_tmp.first.created_at, :format => :month) + " (" + posts_tmp.length.to_s + ")" ,
+            :controller => 'blogs', :action => 'show_date', :user => params[:user], :language => params[:language],
+              :year => posts_tmp.first.created_at.year,
+              :month => posts_tmp.first.created_at.month %><br>
+        <% posts = posts - posts_tmp%>
+      <% end %>
+  <% end %><br>
+  <%#=  tag_cloud( user.blog.posts.tag_counts ) %>
+

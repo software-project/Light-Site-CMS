@@ -1,0 +1,23 @@
+<h1><%= t 'editing location' %></h1>
+
+<% form_for(item.resource, :html => { :name => "location_#{item.resource.id}" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t 'latitude' %>
+    <%= f.text_field :latitude %>
+  </p>
+  <p>
+    <%= f.label t 'logitude' %>
+    <%= f.text_field :logitude %>
+  </p>
+  <p>
+    <%= f.label t 'content' %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('update')) %>
+  </p>
+<% end %>
+
+<%= link_to t('back'), :back %>

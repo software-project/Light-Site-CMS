@@ -1,0 +1,20 @@
+<div class="post-last">
+  <h2><%=h @event.header %></h2>
+  <p><b><%= l @event.start_date %> - <%= l @event.end_date %></b></p>
+
+ <table>
+      <tr>
+        <th><%= t('schedule') %></th>
+      </tr>
+    <% for subevent in @event.subevents %>
+      <tr>
+        <td><%= l(subevent.event_date, :format => :long) %></td>
+        <td><%= subevent.content %></td>
+      </tr>
+    <% end %>
+  </table>
+  <p>
+    <%= @event.content %>
+  </p>
+
+</div>

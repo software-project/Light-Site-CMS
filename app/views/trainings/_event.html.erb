@@ -1,0 +1,25 @@
+<tr id="event_<%= event.id %>"> 
+  <td></td>
+  <td></td>
+  <td class="<%= counter % 2 == 1? "even" : "odd" %>">
+    <%= "#{event.place} Uniwersytet: #{event.university}" %>
+  </td>
+  <td class="<%= counter % 2 == 1? "even" : "odd" %>">
+    <%= event.event_date.strftime('%d-%m-%Y %H:%M') %>
+  </td>
+  <td class="<%= counter % 2 == 1? "even" : "odd" %>">
+    <%= link_to_with_button({:button_color => "orange", :image => "edit", :size => "small"}, "", {:controller => "trainings", :action => "edit_event", :id => event.id}, :id => "edit_event_#{event.id}") %>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $("#edit_event_<%= event.id %>").fancybox({
+         'hideOnContentClick': false,
+         'callbackOnClose': function(){CKEDITOR.instances.training_module_event_place.destroy();},
+         'frameWidth': 640,
+         'frameHeight': 450
+      });
+    });
+  </script>
+    <%= link_to_remote_with_button({:button_color => "red", :image => "cross", :size => "small"},"", :url => {:controller => "trainings", :action => "delete_event", :id => event.id}) %>
+
+  </td>
+</tr>

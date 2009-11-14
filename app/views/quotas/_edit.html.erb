@@ -1,0 +1,28 @@
+<h1>Editing quota</h1>
+
+<% form_for(@quota) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :content %><br />
+    <%= f.ckeditor_field :content %>
+  </p>
+  <p>
+    <%= f.label :speaker %><br />
+    <%= f.text_field :speaker %>
+  </p>
+  <p>
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label :language_id %><br />
+    <%= f.text_field :language_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @quota %> |
+<%= link_to 'Back', quotas_path %>

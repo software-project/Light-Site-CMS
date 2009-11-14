@@ -1,0 +1,14 @@
+<h1><%= t("new_training") %></h1>
+
+<% form_for(@training, :html => { :name => "training_" }) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label t :header %><br />
+    <%= f.text_field :header %>
+  </p>
+  <p>
+    <%= f.submit_with_javascript( t('create')) %>
+  </p>
+<% end %>
+
