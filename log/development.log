@@ -1,0 +1,1122 @@
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-15 20:27:19) [GET]
+  Session ID: 53b12e96bd803c9654a2ed69cf8b1cc1
+  [4;36;1mLanguage Columns (52.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;36;1mUser Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+  [4;36;1mPage Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (1.0ms)[0m   [0mSELECT * FROM `pages` LIMIT 1[0m
+  [4;36;1mLayoutTemplate Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `layout_templates`[0m
+  [4;35;1mLayoutTemplate Load (0.0ms)[0m   [0mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+  [4;36;1mPosition Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'positions.layout_template_id' in 'where clause': SELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1 AND (main_position = 1)) LIMIT 1[0m
+
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'positions.layout_template_id' in 'where clause': SELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1 AND (main_position = 1))  LIMIT 1):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract_adapter.rb:188:in `log'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:309:in `execute'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:563:in `select'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:635:in `find_by_sql'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1490:in `find_every'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1452:in `find_initial'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:587:in `find'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/associations/association_collection.rb:60:in `find'
+    /app/controllers/pages_controller.rb:43:in `show'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (114.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (3.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-15 20:27:30) [GET]
+  Session ID: 53b12e96bd803c9654a2ed69cf8b1cc1
+  [4;35;1mLanguage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (1.0ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+  [4;35;1mPage Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (0.0ms)[0m   [0;1mSELECT * FROM `pages` LIMIT 1[0m
+  [4;35;1mLayoutTemplate Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `layout_templates`[0m
+  [4;36;1mLayoutTemplate Load (1.0ms)[0m   [0;1mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+  [4;35;1mPosition Load (0.0ms)[0m   [0mMysql::Error: Unknown column 'positions.layout_template_id' in 'where clause': SELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1 AND (main_position = 1)) LIMIT 1[0m
+
+
+ActiveRecord::StatementInvalid (Mysql::Error: Unknown column 'positions.layout_template_id' in 'where clause': SELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1 AND (main_position = 1))  LIMIT 1):
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract_adapter.rb:188:in `log'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:309:in `execute'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/mysql_adapter.rb:563:in `select'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:635:in `find_by_sql'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1490:in `find_every'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1452:in `find_initial'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:587:in `find'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/associations/association_collection.rb:60:in `find'
+    /app/controllers/pages_controller.rb:43:in `show'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:76:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/../lib/mongrel/rails.rb:74:in `process'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:159:in `process_client'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:158:in `process_client'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `initialize'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:285:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `initialize'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `new'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel.rb:268:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:282:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `each'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/configurator.rb:281:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:128:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/lib/mongrel/command.rb:212:in `run'
+    c:/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.5-x86-mswin32-60/bin/mongrel_rails:281
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    c:/ruby/lib/ruby/gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    c:/ruby/lib/ruby/gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    c:/ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (112.0ms)
+Rendered c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (3.0ms)
+Rendering c:/ruby/lib/ruby/gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to AddNameToGalleryPhoto (20090914123048)
+  [4;36;1mSQL (214.0ms)[0m   [0;1mALTER TABLE `gallery_photos` DROP `name`[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090914123048'[0m
+Migrating to CreateGalleryPhotos (20090818150653)
+  [4;36;1mSQL (33.0ms)[0m   [0;1mDROP TABLE `gallery_photos`[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090818150653'[0m
+Migrating to CreateGalleries (20090818150606)
+  [4;36;1mSQL (32.0ms)[0m   [0;1mDROP TABLE `galleries`[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090818150606'[0m
+Migrating to ActsAsTaggableMigration (20090720075437)
+  [4;36;1mSQL (45.0ms)[0m   [0;1mDROP TABLE `taggings`[0m
+  [4;35;1mSQL (37.0ms)[0m   [0mDROP TABLE `tags`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090720075437'[0m
+Migrating to AddBlogAttributesToPage (20090717094049)
+  [4;35;1mSQL (200.0ms)[0m   [0mALTER TABLE `pages` DROP `page_type`[0m
+  [4;36;1mSQL (217.0ms)[0m   [0;1mALTER TABLE `pages` DROP `description`[0m
+  [4;35;1mSQL (222.0ms)[0m   [0mALTER TABLE `pages` DROP `user_id`[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090717094049'[0m
+Migrating to CreateNews (20090520091240)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `news`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090520091240'[0m
+Migrating to CreateLocations (20090518201218)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `locations`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090518201218'[0m
+Migrating to AddPlainTextIdToAttachment (20090517223755)
+  [4;35;1mSQL (194.0ms)[0m   [0mALTER TABLE `attachments` DROP `plain_text_id`[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090517223755'[0m
+Migrating to AddEventPluginAndLengthToSubevents (20090430144423)
+  [4;35;1mSQL (190.0ms)[0m   [0mALTER TABLE `subevents` DROP `length`[0m
+  [4;36;1mSQL (178.0ms)[0m   [0;1mALTER TABLE `subevents` DROP `unit`[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090430144423'[0m
+Migrating to AddAttachmentPlugin (20090429020531)
+  [4;36;1mSQL (22.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090429020531'[0m
+Migrating to AddAttachmentToPost (20090428024233)
+  [4;35;1mSQL (230.0ms)[0m   [0mALTER TABLE `plain_texts` DROP `thumb_attachment_id`[0m
+  [4;36;1mSQL (157.0ms)[0m   [0;1mALTER TABLE `plain_texts` DROP `background_attachment_id`[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090428024233'[0m
+Migrating to CreateAttachments (20090428021002)
+  [4;36;1mSQL (24.0ms)[0m   [0;1mDROP TABLE `attachments`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090428021002'[0m
+Migrating to AddRedirectToPage (20090422154515)
+  [4;36;1mSQL (206.0ms)[0m   [0;1mALTER TABLE `pages` DROP `redirect`[0m
+  [4;35;1mSQL (228.0ms)[0m   [0mALTER TABLE `pages` DROP `order`[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090422154515'[0m
+Migrating to CreateSubevents (20090416115351)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `subevents`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090416115351'[0m
+Migrating to CreateEvents (20090416112604)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `events`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090416112604'[0m
+Migrating to CreateQuotas (20090403144838)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `quotas`[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090403144838'[0m
+Migrating to CreateLayoutTemplates (20090328110055)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `layout_templates`[0m
+  [4;36;1mSQL (50.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090328110055'[0m
+Migrating to CreatePlainTexts (20090327163737)
+  [4;35;1mSQL (63.0ms)[0m   [0mDROP TABLE `plain_texts`[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090327163737'[0m
+Migrating to CreateSessions (20090324053612)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `sessions`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090324053612'[0m
+Migrating to CreateMenuTypes (20090323131125)
+  [4;35;1mSQL (24.0ms)[0m   [0mDROP TABLE `menu_types`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090323131125'[0m
+Migrating to CreateMenus (20090323131044)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `menus`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090323131044'[0m
+Migrating to CreateBlocks (20090320140942)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `blocks`[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090320140942'[0m
+Migrating to CreateStatuses (20090320135655)
+  [4;35;1mSQL (69.0ms)[0m   [0mDROP TABLE `statuses`[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090320135655'[0m
+Migrating to CreateExtensionTypes (20090320134715)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `extension_types`[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090320134715'[0m
+Migrating to CreateItems (20090320134538)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `items`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090320134538'[0m
+Migrating to CreatePositions (20090319231157)
+  [4;35;1mSQL (32.0ms)[0m   [0mDROP TABLE `positions`[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090319231157'[0m
+Migrating to CreatePages (20090319231037)
+  [4;35;1mSQL (23.0ms)[0m   [0mDROP TABLE `pages`[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090319231037'[0m
+Migrating to CreateLanguages (20090319225803)
+  [4;35;1mSQL (32.0ms)[0m   [0mDROP TABLE `languages`[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20090319225803'[0m
+Migrating to CreateRoles (20090319222612)
+  [4;35;1mSQL (42.0ms)[0m   [0mDROP TABLE `roles`[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mDROP TABLE `roles_users`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090319222612'[0m
+Migrating to CreateUsers (20090319222404)
+  [4;36;1mSQL (53.0ms)[0m   [0;1mDROP TABLE `users`[0m
+  [4;35;1mSQL (52.0ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20090319222404'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `comments`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `comments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090319222404)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (130.0ms)[0m   [0mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40), `name` varchar(100) DEFAULT '', `email` varchar(100), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(40), `remember_token_expires_at` datetime, `activation_code` varchar(40), `activated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (147.0ms)[0m   [0;1mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090319222404')[0m
+Migrating to CreateRoles (20090319222612)
+  [4;36;1mSQL (52.0ms)[0m   [0;1mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (78.0ms)[0m   [0mCREATE TABLE `roles_users` (`role_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (170.0ms)[0m   [0;1mCREATE INDEX `index_roles_users_on_role_id` ON `roles_users` (`role_id`)[0m
+  [4;35;1mSQL (132.0ms)[0m   [0mCREATE INDEX `index_roles_users_on_user_id` ON `roles_users` (`user_id`)[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRole Exists (0.0ms)[0m   [0;1mSELECT `roles`.id FROM `roles` WHERE (`roles`.`name` = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mRole Create (1.0ms)[0m   [0mINSERT INTO `roles` (`name`) VALUES('admin')[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: activated_at
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (1.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mUser Exists (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@admin.pl') LIMIT 1[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mINSERT INTO `users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `activation_code`, `remember_token`, `login`, `email`, `created_at`) VALUES('admin', '87c6b63feba044de3505becac0329bad4ac77112', '2009-11-15 19:29:30', NULL, 'dddc979f7875a31b8993abdd8a8896dfa32b9654', NULL, '492deb2c676e3362d7395e3b6f6e0209cdc819cc', NULL, 'admin', 'admin@admin.pl', '2009-11-15 19:29:30')[0m
+Sent mail to admin@admin.pl
+
+Date: Sun, 15 Nov 2009 20:29:31 +0100
+From: ADMINEMAIL
+To: admin@admin.pl
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: admin
+  Password: administrator
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/492deb2c676e3362d7395e3b6f6e0209cdc819cc
+  [4;36;1mSQL (47.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` WHERE (`roles`.`name` = 'admin') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mroles_users Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO `roles_users` (`role_id`, `user_id`) VALUES (1, 1)[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE `users` SET `activated_at` = '2009-11-15 19:29:33', `activation_code` = NULL, `updated_at` = '2009-11-15 19:29:33' WHERE `id` = 1[0m
+Sent mail to admin@admin.pl
+
+Date: Sun, 15 Nov 2009 20:29:33 +0100
+From: ADMINEMAIL
+To: admin@admin.pl
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+admin, your account has been activated.  Welcome aboard!
+
+  http://YOURSITE/
+  [4;36;1mSQL (65.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (1.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'admin' AND `users`.id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@admin.pl' AND `users`.id <> 1) LIMIT 1[0m
+Sent mail to admin@admin.pl
+
+Date: Sun, 15 Nov 2009 20:29:35 +0100
+From: ADMINEMAIL
+To: admin@admin.pl
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+admin, your account has been activated.  Welcome aboard!
+
+  http://YOURSITE/
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090319222612')[0m
+Migrating to CreateLanguages (20090319225803)
+  [4;36;1mSQL (52.0ms)[0m   [0;1mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `short_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mLanguage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.0ms)[0m   [0mINSERT INTO `languages` (`name`, `updated_at`, `short_name`, `created_at`) VALUES('Polski', '2009-11-15 19:29:36', 'PL', '2009-11-15 19:29:36')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (1.0ms)[0m   [0;1mINSERT INTO `languages` (`name`, `updated_at`, `short_name`, `created_at`) VALUES('English', '2009-11-15 19:29:36', 'EN', '2009-11-15 19:29:36')[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.0ms)[0m   [0mINSERT INTO `languages` (`name`, `updated_at`, `short_name`, `created_at`) VALUES('Deutsch', '2009-11-15 19:29:36', 'DE', '2009-11-15 19:29:36')[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090319225803')[0m
+Migrating to CreatePages (20090319231037)
+  [4;36;1mSQL (64.0ms)[0m   [0;1mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `language_id` int(11), `parent_id` int(11), `status_id` int(11), `connector` int(11), `slug` varchar(255), `layout_template_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090319231037')[0m
+Migrating to CreatePositions (20090319231157)
+  [4;36;1mSQL (77.0ms)[0m   [0;1mCREATE TABLE `positions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090319231157')[0m
+Migrating to CreateItems (20090320134538)
+  [4;36;1mSQL (157.0ms)[0m   [0;1mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `block_id` int(11), `user_id` int(11), `status_id` int(11), `order` int(11), `connector` int(11), `extension_type_id` int(11), `resource_id` int(11), `resource_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090320134538')[0m
+Migrating to CreateExtensionTypes (20090320134715)
+  [4;36;1mSQL (57.0ms)[0m   [0;1mCREATE TABLE `extension_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `controller_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090320134715')[0m
+Migrating to CreateStatuses (20090320135655)
+  [4;36;1mSQL (86.0ms)[0m   [0;1mCREATE TABLE `statuses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mStatus Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `statuses`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStatus Create (0.0ms)[0m   [0mINSERT INTO `statuses` (`name`, `updated_at`, `created_at`) VALUES('Visible', '2009-11-15 19:29:37', '2009-11-15 19:29:37')[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStatus Create (0.0ms)[0m   [0;1mINSERT INTO `statuses` (`name`, `updated_at`, `created_at`) VALUES('Hidden', '2009-11-15 19:29:37', '2009-11-15 19:29:37')[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStatus Create (0.0ms)[0m   [0mINSERT INTO `statuses` (`name`, `updated_at`, `created_at`) VALUES('Development', '2009-11-15 19:29:37', '2009-11-15 19:29:37')[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090320135655')[0m
+Migrating to CreateBlocks (20090320140942)
+  [4;36;1mSQL (105.0ms)[0m   [0;1mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `page_id` int(11), `position_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090320140942')[0m
+Migrating to CreateMenus (20090323131044)
+  [4;36;1mSQL (97.0ms)[0m   [0;1mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `menu_type_id` int(11), `depth` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mExtensionType Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `extension_types`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (0.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Menu', '2009-11-15 19:29:37', 'menus', '2009-11-15 19:29:37')[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090323131044')[0m
+Migrating to CreateMenuTypes (20090323131125)
+  [4;36;1mSQL (93.0ms)[0m   [0;1mCREATE TABLE `menu_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `type_no` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mMenuType Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `menu_types`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMenuType Create (0.0ms)[0m   [0mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Horizontal main menu', '2009-11-15 19:29:38', 1, '2009-11-15 19:29:38')[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMenuType Create (0.0ms)[0m   [0;1mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Vertical main menu', '2009-11-15 19:29:38', 2, '2009-11-15 19:29:38')[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMenuType Create (0.0ms)[0m   [0mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Vertical main menu with children', '2009-11-15 19:29:38', 3, '2009-11-15 19:29:38')[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMenuType Create (0.0ms)[0m   [0;1mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Childrens menu', '2009-11-15 19:29:38', 4, '2009-11-15 19:29:38')[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090323131125')[0m
+Migrating to CreateSessions (20090324053612)
+  [4;35;1mSQL (140.0ms)[0m   [0mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (169.0ms)[0m   [0;1mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;35;1mSQL (191.0ms)[0m   [0mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090324053612')[0m
+Migrating to CreatePlainTexts (20090327163737)
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE TABLE `plain_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `content` text, `showed_signs_on_preview` int(11), `post` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (0.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Text', '2009-11-15 19:29:38', 'plain_texts', '2009-11-15 19:29:38')[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090327163737')[0m
+Migrating to CreateLayoutTemplates (20090328110055)
+  [4;36;1mSQL (120.0ms)[0m   [0;1mCREATE TABLE `layout_templates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `header_image` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090328110055')[0m
+Migrating to CreateQuotas (20090403144838)
+  [4;36;1mSQL (100.0ms)[0m   [0;1mCREATE TABLE `quotas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `speaker` varchar(255), `company` varchar(255), `language_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (0.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Quotation', '2009-11-15 19:29:39', 'quotas', '2009-11-15 19:29:39')[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090403144838')[0m
+Migrating to CreateEvents (20090416112604)
+  [4;35;1mSQL (109.0ms)[0m   [0mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `content` text, `start_date` date, `end_date` date, `char_showed` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (57.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416112604')[0m
+Migrating to CreateSubevents (20090416115351)
+  [4;35;1mSQL (71.0ms)[0m   [0mCREATE TABLE `subevents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `event_id` int(11), `event_date` datetime, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090416115351')[0m
+Migrating to AddRedirectToPage (20090422154515)
+  [4;35;1mSQL (155.0ms)[0m   [0mALTER TABLE `pages` ADD `redirect` int(11)[0m
+  [4;36;1mSQL (187.0ms)[0m   [0;1mALTER TABLE `pages` ADD `order` int(11)[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090422154515')[0m
+Migrating to CreateAttachments (20090428021002)
+  [4;36;1mSQL (60.0ms)[0m   [0;1mCREATE TABLE `attachments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090428021002')[0m
+Migrating to AddAttachmentToPost (20090428024233)
+  [4;36;1mSQL (139.0ms)[0m   [0;1mALTER TABLE `plain_texts` ADD `thumb_attachment_id` int(11)[0m
+  [4;35;1mSQL (141.0ms)[0m   [0mALTER TABLE `plain_texts` ADD `background_attachment_id` int(11)[0m
+  [4;36;1mSQL (90.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090428024233')[0m
+Migrating to AddAttachmentPlugin (20090429020531)
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (48.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Attachment', '2009-11-15 19:29:40', 'attachments', '2009-11-15 19:29:40')[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (44.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090429020531')[0m
+Migrating to AddEventPluginAndLengthToSubevents (20090430144423)
+  [4;35;1mSQL (247.0ms)[0m   [0mALTER TABLE `subevents` ADD `length` int(11)[0m
+  [4;36;1mSQL (145.0ms)[0m   [0;1mALTER TABLE `subevents` ADD `unit` varchar(255)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (0.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Event', '2009-11-15 19:29:40', 'events', '2009-11-15 19:29:40')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090430144423')[0m
+Migrating to AddPlainTextIdToAttachment (20090517223755)
+  [4;35;1mSQL (140.0ms)[0m   [0mALTER TABLE `attachments` ADD `plain_text_id` int(11)[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090517223755')[0m
+Migrating to CreateLocations (20090518201218)
+  [4;35;1mSQL (104.0ms)[0m   [0mCREATE TABLE `locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `latitude` float, `logitude` float, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (1.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Map', '2009-11-15 19:29:41', 'locations', '2009-11-15 19:29:41')[0m
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090518201218')[0m
+Migrating to CreateNews (20090520091240)
+  [4;36;1mSQL (70.0ms)[0m   [0;1mCREATE TABLE `news` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090520091240')[0m
+Migrating to AddBlogAttributesToPage (20090717094049)
+  [4;36;1mSQL (158.0ms)[0m   [0;1mALTER TABLE `pages` ADD `page_type` varchar(255)[0m
+  [4;35;1mSQL (165.0ms)[0m   [0mALTER TABLE `pages` ADD `description` text[0m
+  [4;36;1mSQL (195.0ms)[0m   [0;1mALTER TABLE `pages` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090717094049')[0m
+Migrating to ActsAsTaggableMigration (20090720075437)
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (79.0ms)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (201.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;35;1mSQL (200.0ms)[0m   [0mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type` ON `taggings` (`taggable_id`, `taggable_type`)[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090720075437')[0m
+Migrating to CreateGalleries (20090818150606)
+  [4;35;1mSQL (91.0ms)[0m   [0mCREATE TABLE `galleries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (0.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Gallery', '2009-11-15 19:29:42', 'galleries', '2009-11-15 19:29:42')[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090818150606')[0m
+Migrating to CreateGalleryPhotos (20090818150653)
+  [4;36;1mSQL (94.0ms)[0m   [0;1mCREATE TABLE `gallery_photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gallery_id` int(11), `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090818150653')[0m
+Migrating to AddNameToGalleryPhoto (20090914123048)
+  [4;36;1mSQL (212.0ms)[0m   [0;1mALTER TABLE `gallery_photos` ADD `name` varchar(255)[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090914123048')[0m
+Migrating to AddPagePaginationToPosition (20091021112714)
+  [4;36;1mSQL (218.0ms)[0m   [0;1mALTER TABLE `positions` ADD `page_pagination` int(11)[0m
+  [4;35;1mSQL (165.0ms)[0m   [0mALTER TABLE `positions` ADD `main_position` tinyint(1)[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091021112714')[0m
+Migrating to AddLayoutTemplateIdToPositions (20091021120058)
+  [4;35;1mSQL (152.0ms)[0m   [0mALTER TABLE `positions` ADD `layout_template_id` int(11)[0m
+  [4;36;1mLayoutTemplate Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `layout_templates`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLayoutTemplate Create (0.0ms)[0m   [0;1mINSERT INTO `layout_templates` (`name`, `updated_at`, `header_image`, `created_at`) VALUES('application', '2009-11-15 19:29:43', 'main', '2009-11-15 19:29:43')[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPosition Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `positions`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPosition Create (0.0ms)[0m   [0;1mINSERT INTO `positions` (`name`, `layout_template_id`, `updated_at`, `page_pagination`, `main_position`, `created_at`) VALUES('content', 1, '2009-11-15 19:29:43', 0, 1, '2009-11-15 19:29:43')[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPosition Create (0.0ms)[0m   [0mINSERT INTO `positions` (`name`, `layout_template_id`, `updated_at`, `page_pagination`, `main_position`, `created_at`) VALUES('side', 1, '2009-11-15 19:29:43', 0, 0, '2009-11-15 19:29:43')[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPosition Create (1.0ms)[0m   [0;1mINSERT INTO `positions` (`name`, `layout_template_id`, `updated_at`, `page_pagination`, `main_position`, `created_at`) VALUES('footer', 1, '2009-11-15 19:29:43', 0, 0, '2009-11-15 19:29:43')[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091021120058')[0m
+Migrating to AddIsBlodToPage (20091022205543)
+  [4;35;1mSQL (185.0ms)[0m   [0mALTER TABLE `pages` ADD `is_blog` tinyint(1)[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091022205543')[0m
+Migrating to CreateTrainings (20091025221540)
+  [4;35;1mSQL (102.0ms)[0m   [0mCREATE TABLE `trainings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091025221540')[0m
+Migrating to CreateTrainingModules (20091025222035)
+  [4;35;1mSQL (127.0ms)[0m   [0mCREATE TABLE `training_modules` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `content` text, `training_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (51.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091025222035')[0m
+Migrating to CreateTrainingModuleEvents (20091025222220)
+  [4;35;1mSQL (66.0ms)[0m   [0mCREATE TABLE `training_module_events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `training_module_id` int(11), `place` text, `event_date` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (0.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Training', '2009-11-15 19:29:44', 'trainings', '2009-11-15 19:29:44')[0m
+  [4;36;1mSQL (14.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091025222220')[0m
+Migrating to AddUniversityToTrainingModuleEvent (20091027113200)
+  [4;36;1mSQL (185.0ms)[0m   [0;1mALTER TABLE `training_module_events` ADD `university` varchar(255)[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091027113200')[0m
+Migrating to CreateComments (20091103004728)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'comments' already exists: CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `subject` varchar(255), `content` text, `status_id` int(11), `user_id` int(11), `user_name` varchar(255), `commentable_id` int(11), `commentable_type` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (125.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090319222404)
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (93.0ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40), `name` varchar(100) DEFAULT '', `email` varchar(100), `crypted_password` varchar(40), `salt` varchar(40), `created_at` datetime, `updated_at` datetime, `remember_token` varchar(40), `remember_token_expires_at` datetime, `activation_code` varchar(40), `activated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (150.0ms)[0m   [0mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;36;1mSQL (23.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090319222404')[0m
+Migrating to CreateRoles (20090319222612)
+  [4;35;1mSQL (52.0ms)[0m   [0mCREATE TABLE `roles` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (56.0ms)[0m   [0;1mCREATE TABLE `roles_users` (`role_id` int(11), `user_id` int(11)) ENGINE=InnoDB[0m
+  [4;35;1mSQL (134.0ms)[0m   [0mCREATE INDEX `index_roles_users_on_role_id` ON `roles_users` (`role_id`)[0m
+  [4;36;1mSQL (220.0ms)[0m   [0;1mCREATE INDEX `index_roles_users_on_user_id` ON `roles_users` (`user_id`)[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRole Exists (1.0ms)[0m   [0mSELECT `roles`.id FROM `roles` WHERE (`roles`.`name` = BINARY 'admin') LIMIT 1[0m
+  [4;36;1mRole Create (0.0ms)[0m   [0;1mINSERT INTO `roles` (`name`) VALUES('admin')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: activated_at
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'admin') LIMIT 1[0m
+  [4;35;1mUser Exists (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@admin.pl') LIMIT 1[0m
+  [4;36;1mUser Create (1.0ms)[0m   [0;1mINSERT INTO `users` (`name`, `salt`, `updated_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `activation_code`, `remember_token`, `login`, `email`, `created_at`) VALUES('admin', 'fe4a4ee61a1223d6f0d052c3e51778b44f214144', '2009-11-15 19:30:14', NULL, '5627dddf95a37efb55e4a566f838d8b400ebbd3f', NULL, '5daf167ea3f8b962763753e424f5448b9f4249f2', NULL, 'admin', 'admin@admin.pl', '2009-11-15 19:30:14')[0m
+Sent mail to admin@admin.pl
+
+Date: Sun, 15 Nov 2009 20:30:14 +0100
+From: ADMINEMAIL
+To: admin@admin.pl
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: admin
+  Password: administrator
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/5daf167ea3f8b962763753e424f5448b9f4249f2
+  [4;35;1mSQL (57.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` WHERE (`roles`.`name` = 'admin') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mroles_users Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO `roles_users` (`role_id`, `user_id`) VALUES (1, 1)[0m
+  [4;36;1mSQL (36.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (1.0ms)[0m   [0;1mUPDATE `users` SET `activated_at` = '2009-11-15 19:30:15', `activation_code` = NULL, `updated_at` = '2009-11-15 19:30:15' WHERE `id` = 1[0m
+Sent mail to admin@admin.pl
+
+Date: Sun, 15 Nov 2009 20:30:15 +0100
+From: ADMINEMAIL
+To: admin@admin.pl
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+admin, your account has been activated.  Welcome aboard!
+
+  http://YOURSITE/
+  [4;35;1mSQL (57.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`login` = BINARY 'admin' AND `users`.id <> 1) LIMIT 1[0m
+  [4;36;1mUser Exists (1.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'admin@admin.pl' AND `users`.id <> 1) LIMIT 1[0m
+Sent mail to admin@admin.pl
+
+Date: Sun, 15 Nov 2009 20:30:16 +0100
+From: ADMINEMAIL
+To: admin@admin.pl
+Subject: [YOURSITE] Your account has been activated!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+admin, your account has been activated.  Welcome aboard!
+
+  http://YOURSITE/
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (51.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090319222612')[0m
+Migrating to CreateLanguages (20090319225803)
+  [4;35;1mSQL (53.0ms)[0m   [0mCREATE TABLE `languages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `short_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mLanguage Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (1.0ms)[0m   [0;1mINSERT INTO `languages` (`name`, `updated_at`, `short_name`, `created_at`) VALUES('Polski', '2009-11-15 19:30:17', 'PL', '2009-11-15 19:30:17')[0m
+  [4;35;1mSQL (35.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLanguage Create (0.0ms)[0m   [0mINSERT INTO `languages` (`name`, `updated_at`, `short_name`, `created_at`) VALUES('English', '2009-11-15 19:30:17', 'EN', '2009-11-15 19:30:17')[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mLanguage Create (0.0ms)[0m   [0;1mINSERT INTO `languages` (`name`, `updated_at`, `short_name`, `created_at`) VALUES('Deutsch', '2009-11-15 19:30:17', 'DE', '2009-11-15 19:30:17')[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (23.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090319225803')[0m
+Migrating to CreatePages (20090319231037)
+  [4;35;1mSQL (61.0ms)[0m   [0mCREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `language_id` int(11), `parent_id` int(11), `status_id` int(11), `connector` int(11), `slug` varchar(255), `layout_template_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (23.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090319231037')[0m
+Migrating to CreatePositions (20090319231157)
+  [4;35;1mSQL (70.0ms)[0m   [0mCREATE TABLE `positions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (41.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090319231157')[0m
+Migrating to CreateItems (20090320134538)
+  [4;35;1mSQL (93.0ms)[0m   [0mCREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `block_id` int(11), `user_id` int(11), `status_id` int(11), `order` int(11), `connector` int(11), `extension_type_id` int(11), `resource_id` int(11), `resource_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090320134538')[0m
+Migrating to CreateExtensionTypes (20090320134715)
+  [4;35;1mSQL (45.0ms)[0m   [0mCREATE TABLE `extension_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `controller_name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090320134715')[0m
+Migrating to CreateStatuses (20090320135655)
+  [4;35;1mSQL (95.0ms)[0m   [0mCREATE TABLE `statuses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mStatus Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `statuses`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStatus Create (0.0ms)[0m   [0;1mINSERT INTO `statuses` (`name`, `updated_at`, `created_at`) VALUES('Visible', '2009-11-15 19:30:18', '2009-11-15 19:30:18')[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mStatus Create (0.0ms)[0m   [0mINSERT INTO `statuses` (`name`, `updated_at`, `created_at`) VALUES('Hidden', '2009-11-15 19:30:18', '2009-11-15 19:30:18')[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mStatus Create (0.0ms)[0m   [0;1mINSERT INTO `statuses` (`name`, `updated_at`, `created_at`) VALUES('Development', '2009-11-15 19:30:18', '2009-11-15 19:30:18')[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090320135655')[0m
+Migrating to CreateBlocks (20090320140942)
+  [4;35;1mSQL (84.0ms)[0m   [0mCREATE TABLE `blocks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `page_id` int(11), `position_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090320140942')[0m
+Migrating to CreateMenus (20090323131044)
+  [4;35;1mSQL (84.0ms)[0m   [0mCREATE TABLE `menus` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `menu_type_id` int(11), `depth` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mExtensionType Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `extension_types`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (0.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Menu', '2009-11-15 19:30:18', 'menus', '2009-11-15 19:30:18')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090323131044')[0m
+Migrating to CreateMenuTypes (20090323131125)
+  [4;35;1mSQL (53.0ms)[0m   [0mCREATE TABLE `menu_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `type_no` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mMenuType Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `menu_types`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMenuType Create (0.0ms)[0m   [0;1mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Horizontal main menu', '2009-11-15 19:30:18', 1, '2009-11-15 19:30:18')[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMenuType Create (0.0ms)[0m   [0mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Vertical main menu', '2009-11-15 19:30:18', 2, '2009-11-15 19:30:18')[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mMenuType Create (0.0ms)[0m   [0;1mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Vertical main menu with children', '2009-11-15 19:30:18', 3, '2009-11-15 19:30:18')[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mMenuType Create (0.0ms)[0m   [0mINSERT INTO `menu_types` (`name`, `updated_at`, `type_no`, `created_at`) VALUES('Childrens menu', '2009-11-15 19:30:18', 4, '2009-11-15 19:30:18')[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090323131125')[0m
+Migrating to CreateSessions (20090324053612)
+  [4;36;1mSQL (54.0ms)[0m   [0;1mCREATE TABLE `sessions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `session_id` varchar(255) NOT NULL, `data` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (122.0ms)[0m   [0mCREATE INDEX `index_sessions_on_session_id` ON `sessions` (`session_id`)[0m
+  [4;36;1mSQL (175.0ms)[0m   [0;1mCREATE INDEX `index_sessions_on_updated_at` ON `sessions` (`updated_at`)[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090324053612')[0m
+Migrating to CreatePlainTexts (20090327163737)
+  [4;36;1mSQL (62.0ms)[0m   [0;1mCREATE TABLE `plain_texts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `content` text, `showed_signs_on_preview` int(11), `post` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (0.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Text', '2009-11-15 19:30:19', 'plain_texts', '2009-11-15 19:30:19')[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090327163737')[0m
+Migrating to CreateLayoutTemplates (20090328110055)
+  [4;35;1mSQL (52.0ms)[0m   [0mCREATE TABLE `layout_templates` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `header_image` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (22.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090328110055')[0m
+Migrating to CreateQuotas (20090403144838)
+  [4;35;1mSQL (63.0ms)[0m   [0mCREATE TABLE `quotas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `speaker` varchar(255), `company` varchar(255), `language_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (1.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Quotation', '2009-11-15 19:30:19', 'quotas', '2009-11-15 19:30:19')[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090403144838')[0m
+Migrating to CreateEvents (20090416112604)
+  [4;36;1mSQL (118.0ms)[0m   [0;1mCREATE TABLE `events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `content` text, `start_date` date, `end_date` date, `char_showed` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090416112604')[0m
+Migrating to CreateSubevents (20090416115351)
+  [4;36;1mSQL (135.0ms)[0m   [0;1mCREATE TABLE `subevents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `event_id` int(11), `event_date` datetime, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090416115351')[0m
+Migrating to AddRedirectToPage (20090422154515)
+  [4;36;1mSQL (161.0ms)[0m   [0;1mALTER TABLE `pages` ADD `redirect` int(11)[0m
+  [4;35;1mSQL (148.0ms)[0m   [0mALTER TABLE `pages` ADD `order` int(11)[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090422154515')[0m
+Migrating to CreateAttachments (20090428021002)
+  [4;35;1mSQL (52.0ms)[0m   [0mCREATE TABLE `attachments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090428021002')[0m
+Migrating to AddAttachmentToPost (20090428024233)
+  [4;35;1mSQL (170.0ms)[0m   [0mALTER TABLE `plain_texts` ADD `thumb_attachment_id` int(11)[0m
+  [4;36;1mSQL (201.0ms)[0m   [0;1mALTER TABLE `plain_texts` ADD `background_attachment_id` int(11)[0m
+  [4;35;1mSQL (70.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090428024233')[0m
+Migrating to AddAttachmentPlugin (20090429020531)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (1.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Attachment', '2009-11-15 19:30:20', 'attachments', '2009-11-15 19:30:20')[0m
+  [4;36;1mSQL (67.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (49.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090429020531')[0m
+Migrating to AddEventPluginAndLengthToSubevents (20090430144423)
+  [4;36;1mSQL (117.0ms)[0m   [0;1mALTER TABLE `subevents` ADD `length` int(11)[0m
+  [4;35;1mSQL (192.0ms)[0m   [0mALTER TABLE `subevents` ADD `unit` varchar(255)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mExtensionType Create (0.0ms)[0m   [0mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Event', '2009-11-15 19:30:20', 'events', '2009-11-15 19:30:20')[0m
+  [4;36;1mSQL (23.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090430144423')[0m
+Migrating to AddPlainTextIdToAttachment (20090517223755)
+  [4;36;1mSQL (119.0ms)[0m   [0;1mALTER TABLE `attachments` ADD `plain_text_id` int(11)[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090517223755')[0m
+Migrating to CreateLocations (20090518201218)
+  [4;36;1mSQL (43.0ms)[0m   [0;1mCREATE TABLE `locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `latitude` float, `logitude` float, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (1.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Map', '2009-11-15 19:30:21', 'locations', '2009-11-15 19:30:21')[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090518201218')[0m
+Migrating to CreateNews (20090520091240)
+  [4;35;1mSQL (67.0ms)[0m   [0mCREATE TABLE `news` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090520091240')[0m
+Migrating to AddBlogAttributesToPage (20090717094049)
+  [4;35;1mSQL (183.0ms)[0m   [0mALTER TABLE `pages` ADD `page_type` varchar(255)[0m
+  [4;36;1mSQL (159.0ms)[0m   [0;1mALTER TABLE `pages` ADD `description` text[0m
+  [4;35;1mSQL (122.0ms)[0m   [0mALTER TABLE `pages` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090717094049')[0m
+Migrating to ActsAsTaggableMigration (20090720075437)
+  [4;35;1mSQL (77.0ms)[0m   [0mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (90.0ms)[0m   [0;1mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11), `taggable_id` int(11), `taggable_type` varchar(255), `created_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (157.0ms)[0m   [0mCREATE INDEX `index_taggings_on_tag_id` ON `taggings` (`tag_id`)[0m
+  [4;36;1mSQL (146.0ms)[0m   [0;1mCREATE INDEX `index_taggings_on_taggable_id_and_taggable_type` ON `taggings` (`taggable_id`, `taggable_type`)[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090720075437')[0m
+Migrating to CreateGalleries (20090818150606)
+  [4;36;1mSQL (108.0ms)[0m   [0;1mCREATE TABLE `galleries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (0.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Gallery', '2009-11-15 19:30:22', 'galleries', '2009-11-15 19:30:22')[0m
+  [4;35;1mSQL (17.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090818150606')[0m
+Migrating to CreateGalleryPhotos (20090818150653)
+  [4;35;1mSQL (77.0ms)[0m   [0mCREATE TABLE `gallery_photos` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `gallery_id` int(11), `parent_id` int(11), `content_type` varchar(255), `filename` varchar(255), `thumbnail` varchar(255), `size` int(11), `width` int(11), `height` int(11), `description` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090818150653')[0m
+Migrating to AddNameToGalleryPhoto (20090914123048)
+  [4;35;1mSQL (136.0ms)[0m   [0mALTER TABLE `gallery_photos` ADD `name` varchar(255)[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090914123048')[0m
+Migrating to AddPagePaginationToPosition (20091021112714)
+  [4;35;1mSQL (163.0ms)[0m   [0mALTER TABLE `positions` ADD `page_pagination` int(11)[0m
+  [4;36;1mSQL (154.0ms)[0m   [0;1mALTER TABLE `positions` ADD `main_position` tinyint(1)[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091021112714')[0m
+Migrating to AddLayoutTemplateIdToPositions (20091021120058)
+  [4;36;1mSQL (166.0ms)[0m   [0;1mALTER TABLE `positions` ADD `layout_template_id` int(11)[0m
+  [4;35;1mLayoutTemplate Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `layout_templates`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLayoutTemplate Create (0.0ms)[0m   [0mINSERT INTO `layout_templates` (`name`, `updated_at`, `header_image`, `created_at`) VALUES('application', '2009-11-15 19:30:23', 'main', '2009-11-15 19:30:23')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mPosition Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `positions`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPosition Create (0.0ms)[0m   [0mINSERT INTO `positions` (`name`, `layout_template_id`, `updated_at`, `page_pagination`, `main_position`, `created_at`) VALUES('content', 1, '2009-11-15 19:30:23', 0, 1, '2009-11-15 19:30:23')[0m
+  [4;36;1mSQL (34.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPosition Create (0.0ms)[0m   [0;1mINSERT INTO `positions` (`name`, `layout_template_id`, `updated_at`, `page_pagination`, `main_position`, `created_at`) VALUES('side', 1, '2009-11-15 19:30:23', 0, 0, '2009-11-15 19:30:23')[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mPosition Create (0.0ms)[0m   [0mINSERT INTO `positions` (`name`, `layout_template_id`, `updated_at`, `page_pagination`, `main_position`, `created_at`) VALUES('footer', 1, '2009-11-15 19:30:23', 0, 0, '2009-11-15 19:30:23')[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091021120058')[0m
+Migrating to AddIsBlodToPage (20091022205543)
+  [4;36;1mSQL (141.0ms)[0m   [0;1mALTER TABLE `pages` ADD `is_blog` tinyint(1)[0m
+  [4;35;1mSQL (19.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091022205543')[0m
+Migrating to CreateTrainings (20091025221540)
+  [4;36;1mSQL (90.0ms)[0m   [0;1mCREATE TABLE `trainings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `header` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091025221540')[0m
+Migrating to CreateTrainingModules (20091025222035)
+  [4;36;1mSQL (335.0ms)[0m   [0;1mCREATE TABLE `training_modules` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `content` text, `training_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091025222035')[0m
+Migrating to CreateTrainingModuleEvents (20091025222220)
+  [4;36;1mSQL (188.0ms)[0m   [0;1mCREATE TABLE `training_module_events` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `training_module_id` int(11), `place` text, `event_date` datetime, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mExtensionType Create (1.0ms)[0m   [0;1mINSERT INTO `extension_types` (`name`, `updated_at`, `controller_name`, `created_at`) VALUES('Training', '2009-11-15 19:30:24', 'trainings', '2009-11-15 19:30:24')[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091025222220')[0m
+Migrating to AddUniversityToTrainingModuleEvent (20091027113200)
+  [4;35;1mSQL (201.0ms)[0m   [0mALTER TABLE `training_module_events` ADD `university` varchar(255)[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091027113200')[0m
+Migrating to CreateComments (20091103004728)
+  [4;35;1mSQL (63.0ms)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `subject` varchar(255), `content` text, `status_id` int(11), `user_id` int(11), `user_name` varchar(255), `commentable_id` int(11), `commentable_type` varchar(255), `parent_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091103004728')[0m
+Migrating to AddCommentableToPlainText (20091103172255)
+  [4;35;1mSQL (144.0ms)[0m   [0mALTER TABLE `plain_texts` ADD `commentable` tinyint(1)[0m
+  [4;36;1mSQL (18.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091103172255')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `attachments`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `attachments`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `attachments`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `blocks`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `blocks`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `events`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `events`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `events`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `extension_types`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `extension_types`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `extension_types`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `galleries`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `galleries`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `galleries`[0m
+  [4;36;1mSQL (43.0ms)[0m   [0;1mSHOW FIELDS FROM `gallery_photos`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `gallery_photos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `gallery_photos`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `items`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `items`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `languages`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `languages`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `layout_templates`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `layout_templates`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `layout_templates`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `locations`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `locations`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `locations`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `menu_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `menu_types`[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mSHOW KEYS FROM `menu_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `menus`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `menus`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `menus`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `news`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `news`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `news`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `pages`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `pages`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `plain_texts`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `plain_texts`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `plain_texts`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `positions`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `positions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `positions`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `quotas`[0m
+  [4;36;1mSQL (41.0ms)[0m   [0;1mdescribe `quotas`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `quotas`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `roles`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `roles`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `roles_users`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `roles_users`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `statuses`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `statuses`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `statuses`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `subevents`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `subevents`[0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mSHOW KEYS FROM `subevents`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `taggings`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `taggings`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `tags`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW KEYS FROM `tags`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `training_module_events`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `training_module_events`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `training_module_events`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `training_modules`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `training_modules`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `training_modules`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `trainings`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `trainings`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `trainings`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (42.0ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-15 20:30:38) [GET]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  [4;36;1mLanguage Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (1.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+  [4;36;1mPage Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT * FROM `pages` LIMIT 1[0m
+Redirected to /pages/new
+Completed in 29ms (DB: 10) | 302 Found [http://127.0.0.1/]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-11-15 20:30:38) [GET]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  [4;36;1mLanguage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+Redirected to /session/new
+Filter chain halted as [:check_roles] rendered_or_redirected.
+Completed in 11ms (DB: 5) | 302 Found [http://127.0.0.1/pages/new]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-11-15 20:30:39) [GET]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  [4;36;1mLanguage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered shared/_styles_and_scripts (6.0ms)
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`remember_token` = '') LIMIT 1[0m
+  [4;36;1mPage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT * FROM `pages` LIMIT 1[0m
+Completed in 42ms (View: 36, DB: 4) | 200 OK [http://127.0.0.1/session/new]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-11-15 20:30:45) [POST]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"a692506f6f57744060d206c1d7711f40340128eb", "login"=>"admin", "password"=>"administrator"}
+  [4;36;1mLanguage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'admin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Cookie set: auth_token=; path=/
+Redirected to /pages/new
+Completed in 22ms (DB: 6) | 302 Found [http://127.0.0.1/session]
+
+
+Processing PagesController#new (for 127.0.0.1 at 2009-11-15 20:30:46) [GET]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  [4;36;1mLanguage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `languages`[0m
+  [4;35;1mLanguage Load (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mJoin Table Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;36;1mRole Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mPage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (1.0ms)[0m   [0;1mSELECT * FROM `pages` ORDER BY connector DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering pages/new
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`connector` = 1) [0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mStatus Load (0.0ms)[0m   [0mSELECT * FROM `statuses` [0m
+  [4;36;1mStatus Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `statuses`[0m
+  [4;35;1mLayoutTemplate Load (0.0ms)[0m   [0mSELECT * FROM `layout_templates` [0m
+  [4;36;1mLayoutTemplate Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `layout_templates`[0m
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT * FROM `pages` [0m
+Rendered pages/_blog_form (1.0ms)
+Rendered shared/_styles_and_scripts (4.0ms)
+Rendered shared/_general_admin (0.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` [0m
+  [4;35;1mPosition Load (0.0ms)[0m   [0mSELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1) [0m
+  [4;36;1mPosition Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `positions`[0m
+  [4;35;1mLayoutTemplate Load (0.0ms)[0m   [0mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+Rendered positions/_row_form (6.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+Rendered positions/_row_form (2.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+Rendered positions/_row_form (1.0ms)
+Rendered layout_templates/_row_form (26.0ms)
+Rendered layout_templates/_layouts (31.0ms)
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+  [4;35;1mJoin Table Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Rendered users/_user_role (2.0ms)
+Rendered users/_user (10.0ms)
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT * FROM `roles` [0m
+Rendered users/_role (0.0ms)
+Rendered users/_admin (21.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`connector` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `languages` [0m
+Rendered shared/_admin (67.0ms)
+  [4;36;1mPage Load (1.0ms)[0m   [0;1mSELECT * FROM `pages` LIMIT 1[0m
+Completed in 166ms (View: 118, DB: 30) | 200 OK [http://127.0.0.1/pages/new]
+
+
+Processing PagesController#create (for 127.0.0.1 at 2009-11-15 20:31:11) [POST]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  Parameters: {"authenticity_token"=>"a692506f6f57744060d206c1d7711f40340128eb", "page"=>{"layout_template_id"=>"1", "name"=>"home", "is_blog"=>"0", "description"=>"", "connector"=>"1", "language_id"=>"1", "status_id"=>"1", "parent_id"=>""}}
+  [4;35;1mLanguage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mJoin Table Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mPage Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mLayoutTemplate Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `layout_templates`[0m
+  [4;36;1mLayoutTemplate Load (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+  [4;35;1mPosition Load (0.0ms)[0m   [0mSELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1) [0m
+  [4;36;1mPosition Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `positions`[0m
+  [4;35;1mBlock Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `blocks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mPage Load (0.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (slug = 'home') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mPage Create (0.0ms)[0m   [0;1mINSERT INTO `pages` (`name`, `slug`, `layout_template_id`, `updated_at`, `is_blog`, `order`, `page_type`, `language_id`, `connector`, `description`, `status_id`, `user_id`, `parent_id`, `created_at`, `redirect`) VALUES('home', 'home', 1, '2009-11-15 19:31:11', 0, 1, NULL, 1, 1, '', 1, NULL, NULL, '2009-11-15 19:31:11', NULL)[0m
+  [4;35;1mBlock Create (0.0ms)[0m   [0mINSERT INTO `blocks` (`updated_at`, `page_id`, `position_id`, `created_at`) VALUES('2009-11-15 19:31:11', 1, 1, '2009-11-15 19:31:11')[0m
+  [4;36;1mBlock Create (0.0ms)[0m   [0;1mINSERT INTO `blocks` (`updated_at`, `page_id`, `position_id`, `created_at`) VALUES('2009-11-15 19:31:11', 1, 2, '2009-11-15 19:31:11')[0m
+  [4;35;1mBlock Create (0.0ms)[0m   [0mINSERT INTO `blocks` (`updated_at`, `page_id`, `position_id`, `created_at`) VALUES('2009-11-15 19:31:11', 1, 3, '2009-11-15 19:31:11')[0m
+  [4;36;1mSQL (54.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to #<Page:0x8360c9c>
+Completed in 303ms (DB: 77) | 302 Found [http://127.0.0.1/pages]
+
+
+Processing PagesController#show (for 127.0.0.1 at 2009-11-15 20:31:12) [GET]
+  Session ID: 0cf9adac386c36ff361e85e3cacf5c7d
+  Parameters: {"id"=>"home"}
+  [4;35;1mLanguage Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `languages`[0m
+  [4;36;1mLanguage Load (1.0ms)[0m   [0;1mSELECT * FROM `languages` WHERE (`languages`.`short_name` = 'pl') LIMIT 1[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mPage Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mPage Load (1.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.`slug` = 'home') LIMIT 1[0m
+  [4;35;1mLayoutTemplate Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `layout_templates`[0m
+  [4;36;1mLayoutTemplate Load (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+  [4;35;1mPosition Load (1.0ms)[0m   [0mSELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1 AND (main_position = 1)) LIMIT 1[0m
+  [4;36;1mPosition Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `positions`[0m
+  [4;35;1mBlock Load (1.0ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.page_id = 1 AND (position_id = 1)) LIMIT 1[0m
+  [4;36;1mBlock Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `blocks`[0m
+Rendering template within layouts/application
+Rendering pages/show
+  [4;35;1mBlock Load (1.0ms)[0m   [0mSELECT * FROM `blocks` WHERE (`blocks`.page_id = 1) [0m
+  [4;36;1mPosition Load (0.0ms)[0m   [0;1mSELECT * FROM `positions` WHERE (`positions`.`id` = 1) [0m
+  [4;35;1mJoin Table Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `roles_users`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mExtensionType Load (1.0ms)[0m   [0;1mSELECT * FROM `extension_types` [0m
+  [4;35;1mExtensionType Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `extension_types`[0m
+  [4;36;1mItem Load (1.0ms)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.block_id = 1) ORDER BY items.order DESC[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `items` WHERE (`items`.block_id = 1) ORDER BY items.order DESC[0m
+  [4;36;1mPosition Load (0.0ms)[0m   [0;1mSELECT * FROM `positions` WHERE (`positions`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `extension_types` [0m
+  [4;36;1mItem Load (0.0ms)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.block_id = 2) ORDER BY items.order DESC[0m
+  [4;35;1mPosition Load (0.0ms)[0m   [0mSELECT * FROM `positions` WHERE (`positions`.`id` = 3) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `extension_types` [0m
+  [4;35;1mItem Load (1.0ms)[0m   [0mSELECT * FROM `items` WHERE (`items`.block_id = 3) ORDER BY items.order DESC[0m
+Rendered shared/_styles_and_scripts (4.0ms)
+Rendered shared/_general_admin (0.0ms)
+  [4;36;1mLayoutTemplate Load (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` [0m
+  [4;35;1mPosition Load (0.0ms)[0m   [0mSELECT * FROM `positions` WHERE (`positions`.layout_template_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+Rendered positions/_row_form (3.0ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+Rendered positions/_row_form (2.0ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `layout_templates` WHERE (`layout_templates`.`id` = 1) [0m
+Rendered positions/_row_form (2.0ms)
+Rendered layout_templates/_row_form (11.0ms)
+Rendered layout_templates/_layouts (14.0ms)
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` [0m
+  [4;36;1mJoin Table Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles_users`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 ) [0m
+Rendered users/_user_role (1.0ms)
+Rendered users/_user (9.0ms)
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT * FROM `roles` [0m
+Rendered users/_role (1.0ms)
+Rendered users/_admin (18.0ms)
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.`connector` = 1) [0m
+  [4;36;1mLanguage Load (0.0ms)[0m   [0;1mSELECT * FROM `languages` [0m
+  [4;35;1mLanguage Load (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 1) [0m
+Rendered shared/_admin (47.0ms)
+  [4;36;1mPage Load (0.0ms)[0m   [0;1mSELECT * FROM `pages` LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `languages` WHERE (`languages`.`id` = 1) [0m
+  [4;36;1mPage Load (0.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (language_id = 1 and parent_id is null) LIMIT 1[0m
+  [4;35;1mPage Load (0.0ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.parent_id = 1) ORDER BY pages.order DESC[0m
+Completed in 255ms (View: 98, DB: 38) | 200 OK [http://127.0.0.1/pages/home]
