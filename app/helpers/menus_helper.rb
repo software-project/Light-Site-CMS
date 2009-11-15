@@ -57,7 +57,7 @@ module MenusHelper
 
   def menu_form(root_page, menu_type, depth)
     unless root_page.nil?
-      html = "<ul><li><a href=\"/PL/home\"><img src=\"/images/home.gif\" alt=\"Home\" class=\"home-img\"></a></li>"
+      html = "<ul>"
       if menu_type < 4
         root_page = Page.find(:first, :conditions => ["language_id = ? and parent_id is null", root_page.language.id] )
         html << menu_form_helper(root_page, depth)

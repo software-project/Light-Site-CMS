@@ -110,7 +110,7 @@ class PagesController < ApplicationController
     end
     
     respond_to do |format|
-      format.html { render :layout => "layouts/blog" }
+      format.html
     end
   end
 

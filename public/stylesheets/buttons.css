@@ -18,7 +18,7 @@
 
 .bt-green-l{
     float: left;
-    background: transparent url(/images/green-left.png) no-repeat top left;
+    background: transparent url(/images/buttons/green-left.png) no-repeat top left;
     width: 15px;
     height: 33px;
 }
@@ -26,7 +26,7 @@
 
 .bt-green-c{
     float: left;
-    background: transparent url(/images/green-bg.png) repeat-x top left;
+    background: transparent url(/images/buttons/green-bg.png) repeat-x top left;
     height: 26px;
     padding-top: 7px;
     padding-right: 3px;
@@ -34,28 +34,28 @@
 
 .bt-green-arrow{
     float: left;
-    background: transparent url(/images/green-right-arrow-left.png) repeat-x top left;
+    background: transparent url(/images/buttons/green-right-arrow-left.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
 
 .bt-green-plus{
     float: left;
-    background: transparent url(/images/green-right-plus.png) repeat-x top left;
+    background: transparent url(/images/buttons/green-right-plus.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
 
 .bt-green-scope{
     float: left;
-    background: transparent url(/images/green-right-scope.png) repeat-x top left;
+    background: transparent url(/images/buttons/green-right-scope.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
 
 .bt-green-power-on{
     float: left;
-    background: transparent url(/images/green-right-power-on.png) repeat-x top left;
+    background: transparent url(/images/buttons/green-right-power-on.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
@@ -63,7 +63,7 @@
 
 .bt-red-l{
     float: left;
-    background: transparent url(/images/red-left.png) no-repeat top left;
+    background: transparent url(/images/buttons/red-left.png) no-repeat top left;
     width: 15px;
     height: 33px;
 }
@@ -71,7 +71,7 @@
 
 .bt-red-c{
     float: left;
-    background: transparent url(/images/red-bg.png) repeat-x top left;
+    background: transparent url(/images/buttons/red-bg.png) repeat-x top left;
     height: 26px;
     padding-top: 7px;
     padding-right: 3px;
@@ -79,7 +79,7 @@
 
 .bt-orange-l{
     float: left;
-    background: transparent url(/images/orange-left.png) no-repeat top left;
+    background: transparent url(/images/buttons/orange-left.png) no-repeat top left;
     width: 15px;
     height: 33px;
 }
@@ -87,7 +87,7 @@
 
 .bt-orange-c{
     float: left;
-    background: transparent url(/images/orange-bg.png) repeat-x top left;
+    background: transparent url(/images/buttons/orange-bg.png) repeat-x top left;
     height: 26px;
     padding-top: 7px;
     padding-right: 3px;
@@ -95,7 +95,7 @@
 
 .bt-red-down-l{
     float: left;
-    background: transparent url(/images/red-down-left.png) no-repeat top left;
+    background: transparent url(/images/buttons/red-down-left.png) no-repeat top left;
     width: 15px;
     height: 33px;
 }
@@ -103,7 +103,7 @@
 
 .bt-red-down-c{
     float: left;
-    background: transparent url(/images/red-down-bg.png) repeat-x top left;
+    background: transparent url(/images/buttons/red-down-bg.png) repeat-x top left;
     height: 25px;
     padding-top: 8px;
     padding-right: 3px;
@@ -111,7 +111,7 @@
 
 .bt-red-down-power-off{
     float: left;
-    background: transparent url(/images/red-right-power-off.png) repeat-x top left;
+    background: transparent url(/images/buttons/red-right-power-off.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
@@ -122,7 +122,7 @@
 
 .bt-orange-small-edit{
     float: left;
-    background: transparent url(/images/small-orange-edit.png) no-repeat top left;
+    background: transparent url(/images/buttons/small-orange-edit.png) no-repeat top left;
     width:33px;
     height:33px;
     max-width:33px;
@@ -131,7 +131,7 @@
 
 .bt-red-small-cross{
     float: left;
-    background: transparent url(/images/small-red-cross.png) no-repeat top left;
+    background: transparent url(/images/buttons/small-red-cross.png) no-repeat top left;
     width:33px;
     height:33px;
     max-width:33px;
@@ -140,7 +140,7 @@
 
 .bt-green-small-arrow-down{
     float: left;
-    background: transparent url(/images/small-green-arrow-down.png) no-repeat top left;
+    background: transparent url(/images/buttons/small-green-arrow-down.png) no-repeat top left;
     width:33px;
     height:33px;
     max-width:33px;
@@ -149,7 +149,7 @@
 
 .bt-red-small-arrow-up{
     float: left;
-    background: transparent url(/images/small-red-arrow-up.png) no-repeat top left;
+    background: transparent url(/images/buttons/small-red-arrow-up.png) no-repeat top left;
     width:33px;
     height:33px;
     max-width:33px;
@@ -158,21 +158,21 @@
 
 .bt-red-back{
     float: left;
-    background: transparent url(/images/red-right-back.png) repeat-x top left;
+    background: transparent url(/images/buttons/red-right-back.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
 
 .bt-red-cross{
     float: left;
-    background: transparent url(/images/red-right-cross.png) repeat-x top left;
+    background: transparent url(/images/buttons/red-right-cross.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }
 
 .bt-orange-edit{
     float: left;
-    background: transparent url(/images/orange-right-edit.png) repeat-x top left;
+    background: transparent url(/images/buttons/orange-right-edit.png) repeat-x top left;
     width: 25px;
     height: 33px;
 }

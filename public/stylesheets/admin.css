@@ -14,6 +14,7 @@
 }
 
 #admin-slider{
+    display:none;
     width: 100%;
     background: #444444;
     height:335px;
@@ -25,12 +26,11 @@
 }
 
 #admin-activator{
-    position: absolute;
     width: 100%;
     font-weight: bold;
     overflow: visible;
     z-index: 100;
-    top: -310px;
+    top: 0;
     left: 0;
 }
 

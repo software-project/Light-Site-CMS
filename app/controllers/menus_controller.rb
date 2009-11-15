@@ -1,15 +1,6 @@
 class MenusController < ApplicationController
   require_role "admin"
-  # GET /menus
-  # GET /menus.xml
-  def index
-    @menus = Menu.find(:all)
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @menus }
-    end
-  end
 
   # GET /menus/1
   # GET /menus/1.xml
@@ -53,23 +44,6 @@ class MenusController < ApplicationController
         format.xml  { render :xml => @menu, :status => :created, :location => @menu }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @menu.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /menus/1
-  # PUT /menus/1.xml
-  def update
-    @menu = Menu.find(params[:id])
-
-    respond_to do |format|
-      if @menu.update_attributes(params[:menu])
-        flash[:notice] = 'Menu was successfully updated.'
-        format.html { redirect_to(@menu) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
         format.xml  { render :xml => @menu.errors, :status => :unprocessable_entity }
       end
     end

@@ -60,14 +60,14 @@
     <%= link_to_function "<div class=\"bt\"><div class=\"bt-green-small-arrow-down\"></div></div>",nil,:id => "show_admin" do |page|
       page['#show_admin'].hide
       #page.visual_effect :move, '#admin-activator', :y => 310
-      page['#admin-activator'].animate :top => 0
+      page['#admin-slider'].blind_down
       page['#hide_admin'].show
       page['#hide_show'].show
     end -%>
     <%= link_to_function "<div class=\"bt\"><div class=\"bt-red-small-arrow-up\" id=\"hide_show\" style=\"display: none;\"></div></div>", nil, :id => "hide_admin" do |page|
       page['#hide_admin'].hide
       #page.visual_effect :move, 'admin-activator', :y => -310
-      page['#admin-activator'].animate :top => -310
+      page['#admin-slider'].blind_up
       page['#show_admin'].show
     end -%>
   </div>

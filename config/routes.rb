@@ -1,6 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
 
-#          :url =>{ :controller => "comments", :action => "new"}
   map.with_options :controller => "comments" do |comments|
     comments.with_options :conditions => {:method => :post} do |comments|
       comments.connect "comments/new/:item",
@@ -146,7 +145,7 @@ ActionController::Routing::Routes.draw do |map|
         :controller => "pages",
         :action => 'blog_post'
       pages.connect '/tag/:tag/:language',
-        :requirements => { :language => /([A-Z][A-Z])/, :tag => /\w+/ },
+        :requirements => { :language => /([A-Z][A-Z])/ },
         :language => nil,
         :controller => "pages",
         :action => "tag"                    

@@ -1,6 +1,6 @@
 <h1><%= t('editing menu') %></h1>
 
-<% form_for(@menu, :html => { :name => "menu_" }) do |f| %>
+<% form_for(item.resource, :html => { :name => "menu_#{item.resource.id}" }) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -9,12 +9,10 @@
   </p>
   <p>
     <%= f.label t('menu depth') %><br />
-    <%= f.spinbox_field :depth, :min => 0, :max => 120, :html => {:value => @menu.depth} %>
+    <%= f.spinbox_field :depth, :min => 0, :max => 120, :html => {:value => item.resource.depth} %>
   </p>
   <p>
-    <%= f.submit_with_javascript( t('create')) %>
+    <%= f.submit_with_javascript( t('update')) %>
   </p>
 <% end %>
 
-<%= link_to t('show'), @menu %> |
-<%= link_to t('back'), menus_path %>
