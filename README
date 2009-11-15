@@ -1,4 +1,4 @@
-== Welcome to Light Site CMS
+== Welcome to Light Site CMS v. 0.1.0
 
 Light Site CMS is easy to use Content Management System. There are no separate admin applications. 
 All you need to edit content of your site is your site. 
@@ -31,3 +31,19 @@ extensions:
 # AttributesExtension- adds some attributes to existing form.
 # AjaxListExtension- Creates separate ajax tab where you need, eg. Admin panel
 
+== Features and plugins
+
+# Wysywig editor (Ckeditor aka Fckeditor 3)
+# Google Maps plugin
+# Taggable and commentable Blog
+# I18N support with easy connections
+# Other extensions: menu/submenu, attachments, events, trainings, gallery, quotations
+
+== Planed stuff
+
+# RSS support
+# Parent/child-like url structure
+# Pages administation panel
+# Dynamic plugin loading/disabling
+# Plugin home page- one site for all existing and future plugins
+# Extended I18N support with Google Translate

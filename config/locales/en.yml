@@ -2,6 +2,31 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  activerecord:
+    errors:
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+      messages:
+        inclusion: "is not included in the list"
+        exclusion: "is reserved"
+        invalid: "is invalid"
+        confirmation: "doesn't match confirmation"
+        accepted: "must be accepted"
+        empty: "can't be empty"
+        blank: "can't be blank"
+        too_long: "is too long (maximum is {{count}} characters)"
+        too_short: "is too short (minimum is {{count}} characters)"
+        wrong_length: "is the wrong length (should be {{count}} characters)"
+        taken: "has already been taken"
+        not_a_number: "is not a number"
+        greater_than: "must be greater than {{count}}"
+        greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+        equal_to: "must be equal to {{count}}"
+        less_than: "must be less than {{count}}"
+        less_than_or_equal_to: "must be less than or equal to {{count}}"
+        odd: "must be odd"
+        even: "must be even"
+        record_invalid: "Validation failed: {{errors}}"
 
   message:
     quotas:
@@ -43,6 +68,7 @@ en:
     blog menu: Blog menu
     blog text: Post
     gallery: Gallery
+    training: Training
 
   admin:
     connect language: Connect language
@@ -154,6 +180,63 @@ en:
       words_connector: ", "
       two_words_connector: " and "
       last_word_connector: ", and "
+  subevents: Subevent
+  event: Event
+  event date: Event date
+  no subevents: No subevents
+  subevent add: Add subevent
+  schedule: Schedule
+  editing subevent: Editing subevent
+  new subevent: New subevent
+  event_date: Event date
+  new gallery: New gallery
+  edit gallery: Edit gallery
+  add photo: Add photo
+  photos: Photos
+  delete: Delete
+  Are you sure?: Are you sure?
+  redirect: Redirection to subpage
+  choose: Choose
+  oryginal: oryginal
+  choose_size: Choose size
+  add_image: Add image
+  new_training: New training
+  editing training: Editing training
+  add_training_module: Add training module
+  place: Place
+  university: University
+  comments: Comments
+  subject: Subject
+  add_new_comment: Add new comment
+  send: Send
+  user_wrote: User {{user}} wrote
+  commentable: Commentable
+  user:
+    nick: Nick
+    name: User
+    login: Login
+    activated: Activated
+    email: Email
+    is_activated: Yes
+    not_activated: No
+    add: Add user
+    new: New user
+    activate: Activate
+    roles: Roles
+    add_role: Add role
+    role: Role
+  actions: Actions
+  sign_up: Sign up
+  password: Password
+  password_confirmation: Confirm password
+  cant_remove_this_element: This element cannot be deleted
+  add_layout: Add layout
+  add_position: Add position
+  new_position: New position
+  edit_position: Editing position
+  cant_delete_main_panel: Main panel cannot be deleted.
+  removal_will_cause_removal_of_all_subitems: If you delete this item, all subitems will be removed. Continue?
+  cant_change_this_element: This element cannot be changed or data are false.
 
  
 
