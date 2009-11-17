@@ -16,18 +16,19 @@ class Page < ActiveRecord::Base
 
   def get_page_path
     if self.class.nil? || self.class == Page
-    "/#{language.short_name.upcase}/#{slug}"
+    "/#{language.short_name}/#{slug}"
     else
       object = Object.const_get(self.class)
       object.get_page_path
     end
   end
 
+  def active_children
+    Page.find(:all, :conditions => ["parent_id = ? and status_id = ?",self.id, Status.find_by_name("Visible").id],:order => "pages.order DESC")
+  end
+
   def lower_item(order_position)
-    list = []
-    self.children.each{|p|
-      list << p if p.order < order_position
-    }
+    list = self.children.select{|p| p.order < order_position }.sort_by { |o| o.order  }
     list.last
   end
 

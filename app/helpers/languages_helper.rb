@@ -10,6 +10,7 @@ module LanguagesHelper
 
   def language_linker(page)
     html = ""
+    if !page.nil?
     languages = Language.find(:all)
     for language in languages
       newpage = Page.find_by_connector(page.connector, :conditions => ["language_id = ?", language.id])
@@ -18,6 +19,7 @@ module LanguagesHelper
       end
       unless newpage.nil?
         html << "<a href=\"#{newpage.get_page_path}\">#{image_tag("/images/flags/" + language.short_name + ".png")}</a>"
+      end
       end
     end
     html

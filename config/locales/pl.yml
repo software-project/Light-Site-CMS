@@ -42,6 +42,7 @@ pl:
     logged in successfully: Zostałeś zalogowany.
     page:
       created: Strona została dodana.
+      parent_not_conected: Strona rodzica jeszcze nie jest podłączona. Najpierw dodaj strony- rodzice.
     blog:
       created: Blog został dodany.
     menu:

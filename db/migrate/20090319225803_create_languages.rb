@@ -7,9 +7,9 @@ class CreateLanguages < ActiveRecord::Migration
       t.timestamps
     end
 
-    Language.create(:name => "Polski", :short_name => "PL")
-    Language.create(:name => "English", :short_name => "EN")
-    Language.create(:name => "Deutsch", :short_name => "DE")
+    Language.create(:name => "Polski", :short_name => "pl")
+    Language.create(:name => "English", :short_name => "en")
+    Language.create(:name => "Deutsch", :short_name => "de")
   end
 
   def self.down

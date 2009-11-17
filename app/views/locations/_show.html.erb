@@ -4,8 +4,15 @@
   </div>
 </div>
 <% content_for :meta_content do %>
-  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAv_R3bAupJr7vmIF_H5rSGhTwd-h-MRs9uckU1DcG63C9UmZHfBSkxJRgKIuy3zjfFyoO8oWMsvmA0w"
-      type="text/javascript"></script>
+
+   <script type="text/javascript"> document.write(
+      '<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=' +
+      {
+         'software-project.pl': 'ABQIAAAAv_R3bAupJr7vmIF_H5rSGhSMY8wI1xO133-FyZ3WNt1iO4UudRRzy73BS33tlIDLy07PCCFH2fwVug',
+         'software-project.eu': 'ABQIAAAAv_R3bAupJr7vmIF_H5rSGhRI_hFJmtrVf1n7w0WPrOP5DQbJGBQCZ4qHmmnQzLVxPxeNLjBuLEfG0g'
+      }[location.host] +
+      '" type="text/javascript"><\/script>' );
+   </script>
     <script type="text/javascript">
 
     //<![CDATA[
@@ -17,17 +24,7 @@
         map.setCenter(new GLatLng(<%= item.resource.latitude %>,<%= item.resource.logitude %>), 15);
         map.openInfoWindowHtml(map.getCenter(),"<%= item.resource.content %>");
 
-        var shopIcon = new GIcon(G_DEFAULT_ICON);
-        shopIcon.iconSize = new GSize(33, 32);
-        shopIcon.iconAnchor = new GPoint(-15, 5);
-        
-        // Set up our GMarkerOptions object
-        markerOptions = { icon:shopIcon };
-        var bounds = map.getBounds();
-        var southWest = bounds.getSouthWest();
-        var northEast = bounds.getNorthEast();
-
-        map.addOverlay(new GMarker(point,markerOptions));
+        map.addOverlay(new GMarker(point));
         map.addControl(new GMapTypeControl());
         map.addControl(new GLargeMapControl3D());
         // Add 10 markers to the map at random locations

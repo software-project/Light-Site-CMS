@@ -38,6 +38,7 @@ en:
       unmovable: Item can't be moved.
     logged in successfully: Logged in successfully.
     page:
+      parent_not_conected: Parent page is not connected yet. Add parent page first.
       created: Page was successfully created.
     blog:
       created: Blog was successfully created.

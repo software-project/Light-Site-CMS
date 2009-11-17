@@ -2,8 +2,8 @@ module MenusHelper
 
   def menu_form_helper(page, depth)
     html = ""
-    for tmpage in page.children
-      html << "<li #{params[:name] == tmpage.slug ? " id=\"selected-page\"" : "" }><a href=\"#{tmpage.get_page_path}\"><img src=\"/images/#{tmpage.slug + (params[:name] == tmpage.slug ? "-s":"")}.png\" alt=\"\"/></a>" if tmpage.status.id == 1
+    for tmpage in page.active_children
+      html << "<li #{params[:name] == tmpage.slug ? " id=\"selected-page\"" : "" }><a href=\"#{tmpage.get_page_path}\">#{tmpage.name}</a>" if tmpage.status.id == 1
       if admin? && (session[:admin] == :on || session[:admin].nil?)
         html << "<li><a href=\"#{tmpage.get_page_path}\">#{tmpage.name}</a>" unless tmpage.status.id == 1
         html << page_admin(tmpage)

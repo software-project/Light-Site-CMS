@@ -134,18 +134,18 @@ ActionController::Routing::Routes.draw do |map|
   map.with_options :controller => 'pages' do |pages|
     pages.with_options :conditions => {:method => :get} do |pages|
       pages.connect '/blog/:language/:user/:year/:month',
-        :requirements => { :year => /(19|20)\d\d/, :month => /[0-1]?\d/,:language => /([A-Z][A-Z])/ },
+        :requirements => { :year => /(19|20)\d\d/, :month => /[0-1]?\d/,:language => /([A-Za-z]{2})/ },
         :user =>  nil,
         :year => nil,
         :month => nil,
         :controller => "pages",
         :action => 'blog'
       pages.connect '/blog/:language/:user/:year/:month/:day/:id',
-        :requirements => { :year => /(19|20)\d\d/, :month => /[0-1]?\d/ , :day => /[0-3]?\d/, :language => /([A-Z][A-Z])/},
+        :requirements => { :year => /(19|20)\d\d/, :month => /[0-1]?\d/ , :day => /[0-3]?\d/, :language => /([A-Za-z]{2})/},
         :controller => "pages",
         :action => 'blog_post'
       pages.connect '/tag/:tag/:language',
-        :requirements => { :language => /([A-Z][A-Z])/ },
+        :requirements => { :language => /([A-Za-z]{2})/ },
         :language => nil,
         :controller => "pages",
         :action => "tag"                    
@@ -231,7 +231,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "/:language/:name",
     :controller => "pages",
     :action => "show",
-    :requirements => { :language => /([A-Z][A-Z])/ }
+    :requirements => { :language => /([a-zA-Z]{2})/ }
 
   map.connect "pages/move_up/:id",
     :controller => "pages",
